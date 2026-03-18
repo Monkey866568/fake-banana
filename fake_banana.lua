@@ -1,59 +1,59 @@
--- Nguồn được chia sẻ bởi araujozwx
+-- source shared by araujozwx 
 
-nếu getgenv().Nousigi thì
+if getgenv().Nousigi then 
 	if game.CoreGui:FindFirstChild("Night Mystic GUI") then
 		for i, v in ipairs(game.CoreGui:GetChildren()) do
-			if string.find(v.Name, "Night Mystic") then
+			if string.find(v.Name,  "Night Mystic") then
 				v:Destroy()
-			kết thúc
-		kết thúc
-	kết thúc
-kết thúc
+			end
+		end
+	end
+end
 getgenv().Nousigi = true
 
 local DisableAnimation = game.Players.LocalPlayer.PlayerGui:FindFirstChild('TouchGui')
 
 local T1UIColor = {
-    ["Màu viền"] = Color3.fromRGB(50, 50, 50),
-    ["Click chuột màu hiệu ứng"] = Color3.fromRGB(255,160,0),
-    ["Thiết lập biểu tượng màu"] = Color3.fromRGB(200, 200, 200),
-    ["Logo Image"] = "rbxassetid123613996022560",
-    ["Tìm kiếm biểu tượng màu"] = Color3.fromRGB(20,20,20),
-    ["Màu nổi của tìm kiếm biểu tượng"] = Color3.fromRGB(0,0,0),
-    ["Màu chữ GUI"] = Color3.fromRGB(0, 0, 0),
-    ["Màu chữ"] = Color3.fromRGB(0,0,0),
-    ["Màu chữ giữ chỗ"] = Color3.fromRGB(100, 100, 100),
-    ["Màu chữ tiêu đề"] = Color3.fromRGB(255, 255, 255),
+    ["Border Color"] = Color3.fromRGB(50, 50, 50),
+    ["Click Effect Color"] = Color3.fromRGB(255, 105, 180),
+    ["Setting Icon Color"] = Color3.fromRGB(200, 200, 200),
+    ["Logo Image"] = "rbxassetid://123613996022560",
+    ["Search Icon Color"] = Color3.fromRGB(255, 105, 180),
+    ["Search Icon Highlight Color"] = Color3.fromRGB(255, 140, 200),
+    ["GUI Text Color"] = Color3.fromRGB(240, 240, 240),
+    ["Text Color"] = Color3.fromRGB(240, 240, 240),
+    ["Placeholder Text Color"] = Color3.fromRGB(100, 100, 100),
+    ["Title Text Color"] = Color3.fromRGB(255, 255, 255),
     
-    ["Màu nền chính"] = Color3.fromRGB(255,115,0),
-    ["Màu nền 1"] = Color3.fromRGB(22, 22, 22),
-    ["Độ trong suốt của nền 1"] = 0
-    ["Màu nền 2"] = Color3.fromRGB(30, 30, 30),
-    ["Màu nền 3"] = Color3.fromRGB(25, 25, 25),
-    [" Hình"] = "",
+    ["Background Main Color"] = Color3.fromRGB(15, 15, 15), 
+    ["Background 1 Color"] = Color3.fromRGB(22, 22, 22),
+    ["Background 1 Transparency"] = 0.05,
+    ["Background 2 Color"] = Color3.fromRGB(30, 30, 30),
+    ["Background 3 Color"] = Color3.fromRGB(25, 25, 25),
+    ["Background Image"] = "",
     
-    ["Màu được chọn trên trang"] = Color3.fromRGB(255, 105, 180),
-    ["Màu chữ phần"] = Color3.fromRGB(255, 255, 255),
-    ["Màu gạch chân phần"] = Color3.fromRGB(255, 105, 180),
-    ["Chuyển đổi viền màu"] = Color3.fromRGB(70, 70, 70),
-    ["Chuyển đổi màu đã chọn"] = Color3.fromRGB(255, 105, 180),
+    ["Page Selected Color"] = Color3.fromRGB(255, 105, 180),
+    ["Section Text Color"] = Color3.fromRGB(255, 255, 255),
+    ["Section Underline Color"] = Color3.fromRGB(255, 105, 180),
+    ["Toggle Border Color"] = Color3.fromRGB(70, 70, 70),
+    ["Toggle Checked Color"] = Color3.fromRGB(255, 105, 180),
     ["Toggle Desc Color"] = Color3.fromRGB(180, 180, 180),
     
-    ["Màu nút"] = Color3.fromRGB(35, 35, 35),
-    ["Màu nhãn"] = Color3.fromRGB(28, 28, 28),
-    ["Màu biểu tượng thả xuống"] = Color3.fromRGB(255, 105, 180),
-    ["Màu được chọn từ menu thả xuống"] = Color3.fromRGB(255, 105, 180),
-    ["Màu được chọn trong menu thả xuống"] = Color3.fromRGB(255, 255, 255),
+    ["Button Color"] = Color3.fromRGB(35, 35, 35),
+    ["Label Color"] = Color3.fromRGB(28, 28, 28),
+    ["Dropdown Icon Color"] = Color3.fromRGB(255, 105, 180),
+    ["Dropdown Selected Color"] = Color3.fromRGB(255, 105, 180),
+    ["Dropdown Selected Check Color"] = Color3.fromRGB(255, 255, 255),
     
-    ["Màu sáng hộp văn bản"] = Color3.fromRGB(255, 105, 180),
-    ["Màu sáng khung"] = Color3.fromRGB(255, 105, 180),
-    ["Màu đường trượt"] = Color3.fromRGB(45, 45, 45),
-    ["Màu nổi của thanh trượt"] = Color3.fromRGB(255, 105, 180),
+    ["Textbox Highlight Color"] = Color3.fromRGB(255, 105, 180),
+    ["Box Highlight Color"] = Color3.fromRGB(255, 105, 180),
+    ["Slider Line Color"] = Color3.fromRGB(45, 45, 45),
+    ["Slider Highlight Color"] = Color3.fromRGB(255, 105, 180),
     
-    ["Tween Animation 1 Speed"] = TắtHoạt hình và 0 hoặc 0,25,
-    ["Tween Animation 2 Speed"] = TắtHoạt hình và 0 hoặc 0,5,
-    ["Tween Animation 3 Speed"] = TắtHoạt hình và 0 hoặc 0,1,
-    ["Độ trong suốt của chữ rõ ràng"] = 0,8
+    ["Tween Animation 1 Speed"] = DisableAnimation and 0 or 0.25,
+    ["Tween Animation 2 Speed"] = DisableAnimation and 0 or 0.5,
+    ["Tween Animation 3 Speed"] = DisableAnimation and 0 or 0.1,
+    ["Text Stroke Transparency"] = .8 
 }
 
 
@@ -64,67 +64,67 @@ getgenv().UIToggled = false
 
 
 local currcolor = {}
-Thư viện cục bộ = {};
+local Library = {};
 local Library_Function = {}
 local TweenService = game:GetService('TweenService')
 local uis = game:GetService("UserInputService")
-RunService local = game:GetService("RunService")
+local RunService = game:GetService("RunService")
 
-hàm local makeDraggable(topBarObject, object)
-	kéo cục bộ = nil
+local function makeDraggable(topBarObject, object)
+	local dragging = nil
 	local dragInput = nil
 	local dragStart = nil
-	location start local = nil
+	local startPosition = nil
 	topBarObject.InputBegan:Connect(function(input)
-		nếu input.UserInputType == Enum.UserInputType.MouseButton1 hoặc input.UserInputType == Enum.UserInputType.Touch thì
-			kéo = đúng
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
 			dragStart = input.Position
 			startPosition = object.Position
 			input.Changed:Connect(function()
 				if input.UserInputState == Enum.UserInputState.End then
-					kéo lê = sai
-				kết thúc
-			kết thúc)
-		kết thúc
-	kết thúc)
+					dragging = false
+				end
+			end)
+		end
+	end)
 	topBarObject.InputChanged:Connect(function(input)
-		nếu input.UserInputType == Enum.UserInputType.MouseMovement hoặc input.UserInputType == Enum.UserInputType.Touch thì
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
 			dragInput = input
-		kết thúc
-	kết thúc)
+		end
+	end)
 	uis.InputChanged:Connect(function(input)
-		if input == dragInput và đang kéo dài thì
-			delta local = vị trí đầu vào - điểm bắt đầu mở rộng
-			if not must djtmemay and cac thì
+		if input == dragInput and dragging then
+			local delta = input.Position - dragStart
+			if not djtmemay and cac then
 				TweenService:Create(object, TweenInfo.new(DisableAnimation and 0 or 0.35, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {
-					Vị trí = UDim2.new(startPosition.X.Scale, startPosition.X.Offset + delta.X, startPosition.Y.Scale, startPosition.Y.Offset + delta.Y)
-				}):Chơi()
+					Position = UDim2.new(startPosition.X.Scale, startPosition.X.Offset + delta.X, startPosition.Y.Scale, startPosition.Y.Offset + delta.Y)
+				}):Play()
 			elseif not djtmemay and not cac then
 				object.Position = UDim2.new(startPosition.X.Scale, startPosition.X.Offset + delta.X, startPosition.Y.Scale, startPosition.Y.Offset + delta.Y)
-			kết thúc
-		kết thúc
-	kết thúc)
-kết thúc
+			end
+		end
+	end)
+end
 
 Library_Function.Gui = Instance.new('ScreenGui')
 Library_Function.Gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-Library_Function.Gui.Name = 'Giao diện người dùng Night Mystic'
+Library_Function.Gui.Name = 'Night Mystic GUI'
 Library_Function.Gui.Enabled = false
 
 getgenv().ReadyForGuiLoaded = false
-sinh ra (hàm()
-	lặp lại
+spawn(function()
+	repeat
 		task.wait()
-	cho đến khi getgenv().ReadyForGuiLoaded
-	if getgenv().UIToggled thì
+	until getgenv().ReadyForGuiLoaded
+	if getgenv().UIToggled then
 		Library_Function.Gui.Enabled = true
-	kết thúc
-kết thúc)
+	end
+end)
 
 
 Library_Function.NotiGui = Instance.new('ScreenGui')
 Library_Function.NotiGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-Library_Function.NotiGui.Name = 'Thông báo của Night Mystic'
+Library_Function.NotiGui.Name = 'Night Mystic Notification'
 
 Library_Function.HideGui = Instance.new('ScreenGui')
 Library_Function.HideGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -132,31 +132,31 @@ Library_Function.HideGui.Name = 'Night Mystic'
 
 
 local Players = game:GetService("Players")
-người chơi cục bộ = Players.LocalPlayer
+local player = Players.LocalPlayer
 
 local ToggleScreenGui = Instance.new("ScreenGui")
 ToggleScreenGui.Parent = game:GetService("CoreGui")
 ToggleScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 ToggleScreenGui.Name = "NazuXWindowsToggleUltimate"
 
--- DỊCH VỤ
+-- SERVICES
 local CoreGui = game:GetService("CoreGui")
 local TweenService = game:GetService("TweenService")
 local UIS = game:GetService("UserInputService")
 
--- GIAO DIỆN NGƯỜI DÙNG TRÊN MÀN HÌNH (BẮT BUỘC)
+-- SCREEN GUI (BẮT BUỘC)
 local screenGui = Instance.new("ScreenGui")
 screenGui.Name = "BananaToggleGui"
 screenGui.ResetOnSpawn = false
 screenGui.IgnoreGuiInset = true
 screenGui.Parent = CoreGui
 
--- NÚT CHUYỂN ĐỔI CHÍNH
--- Dung Image truc tiep tren ImageButton, UICorner bo tron ​​ca nút lan anh
+-- MAIN TOGGLE BUTTON
+-- Dung Image truc tiep tren ImageButton, UICorner bo tron ca button lan anh
 local mainButton = Instance.new("ImageButton")
 mainButton.Parent = screenGui
 mainButton.Size = UDim2.new(0, 60, 0, 60)
-mainButton.Position = UDim2.new(0, 15, 0,5, -30)
+mainButton.Position = UDim2.new(0, 15, 0.5, -30)
 mainButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 mainButton.BackgroundTransparency = 0
 mainButton.AutoButtonColor = false
@@ -166,27 +166,27 @@ mainButton.ScaleType = Enum.ScaleType.Fit
 mainButton.ZIndex = 10
 mainButton.ClipsDescendants = true
 
--- BỘ TRON 100% -- UICorner nay clip ca phan anh theo hinh tron
-góc cục bộ = Instance.new("UICorner")
+-- BO TRON 100% -- UICorner nay clip ca phan anh theo hinh tron
+local corner = Instance.new("UICorner")
 corner.CornerRadius = UDim.new(1, 0)
 corner.Parent = mainButton
 
 -- icon tro den chinh mainButton de cac tween iconScaleTween van chay duoc
-biểu tượng local = nút chính
+local icon = mainButton
 
--- TÌNH TRẠNG
+-- STATE
 local isToggled = true
-kéo cục bộ = sai
-cục bộ kéo bắt đầu
-local start start
+local dragging = false
+local dragStart
+local startPos
 local CLICK_DISTANCE = 6
 
--- TRUNG NIÊN
+-- TWEEN
 local tweenOn = TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
 local tweenOff = TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
 local fluentTweenInfo = TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-local hoverTweenInfo = TweenInfo.new(0.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-local clickTweenInfo = TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+local hoverTweenInfo  = TweenInfo.new(0.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+local clickTweenInfo  = TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
 local defaultTweenInfo = TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
 
 -- UIStroke cho mainButton
@@ -196,129 +196,129 @@ UIStroke.Color = Color3.fromRGB(255, 105, 180)
 UIStroke.Thickness = 1.5
 UIStroke.Transparency = 0.7
 
--- Icon luon hien thi ro, khong phai
-cục bộ mờ = sai
+-- Icon luon hien thi ro, khong fade
+local faded = false
 local fadeOutTween = TweenService:Create(icon, defaultTweenInfo, { ImageTransparency = 0 })
-local fadeInTween = TweenService:Create(icon, defaultTweenInfo, { ImageTransparency = 0 })
+local fadeInTween  = TweenService:Create(icon, defaultTweenInfo, { ImageTransparency = 0 })
 
--- BẮT ĐẦU NHẬP LIỆU
+-- INPUT BEGIN
 mainButton.InputBegan:Connect(function(input)
-	nếu input.UserInputType == Enum.UserInputType.MouseButton1
-	hoặc input.UserInputType == Enum.UserInputType.Touch thì
+	if input.UserInputType == Enum.UserInputType.MouseButton1
+	or input.UserInputType == Enum.UserInputType.Touch then
 		dragStart = input.Position
 		startPos = mainButton.Position
-		kéo = đúng
-	kết thúc
-kết thúc)
+		dragging = true
+	end
+end)
 
--- KÉO DI CHUYỂN
+-- DRAG MOVE
 UIS.InputChanged:Connect(function(input)
-	nếu kéo và (
+	if dragging and (
 		input.UserInputType == Enum.UserInputType.MouseMovement
-		hoặc input.UserInputType == Enum.UserInputType.Touch
-	) sau đó
-		delta local = vị trí đầu vào - điểm bắt đầu mở rộng
-		nếu math.abs(delta.X) > CLICK_DISTANCE hoặc math.abs(delta.Y) > CLICK_DISTANCE thì
+		or input.UserInputType == Enum.UserInputType.Touch
+	) then
+		local delta = input.Position - dragStart
+		if math.abs(delta.X) > CLICK_DISTANCE or math.abs(delta.Y) > CLICK_DISTANCE then
 			mainButton.Position = UDim2.new(
 				startPos.X.Scale,
 				startPos.X.Offset + delta.X,
 				startPos.Y.Scale,
 				startPos.Y.Offset + delta.Y
 			)
-		kết thúc
-	kết thúc
-kết thúc)
+		end
+	end
+end)
 
--- KẾT THÚC NHẬP LIỆU (NHẤN CHUỘC / KÉO KẾT THÚC)
+-- INPUT END (CLICK / END DRAG)
 UIS.InputEnded:Connect(function(input)
-	nếu input.UserInputType == Enum.UserInputType.MouseButton1
-	hoặc input.UserInputType == Enum.UserInputType.Touch thì
+	if input.UserInputType == Enum.UserInputType.MouseButton1
+	or input.UserInputType == Enum.UserInputType.Touch then
 
-		delta local = vị trí đầu vào - điểm bắt đầu mở rộng
+		local delta = input.Position - dragStart
 
 		-- CLICK (KHÔNG KÉO)
-		nếu math.abs(delta.X) < CLICK_DISTANCE và math.abs(delta.Y) < CLICK_DISTANCE thì
-			isToggled = không phải isToggled
+		if math.abs(delta.X) < CLICK_DISTANCE and math.abs(delta.Y) < CLICK_DISTANCE then
+			isToggled = not isToggled
 
-			nếu isToggled thì
-				TweenService: Tạo(mainButton, tweenOn, {
+			if isToggled then
+				TweenService:Create(mainButton, tweenOn, {
 					BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-				}):Chơi()
-			khác
+				}):Play()
+			else
 				TweenService:Create(mainButton, tweenOff, {
 					BackgroundColor3 = Color3.fromRGB(15, 15, 15)
-				}):Chơi()
-			kết thúc
+				}):Play()
+			end
 
-			print("Giao diện người dùng đã được bật/tắt:", isToggled) -- Remove error
-		kết thúc
+			print("UI TOGGLED:", isToggled) -- DEBUG
+		end
 
-		kéo lê = sai
-	kết thúc
-kết thúc)
+		dragging = false
+	end
+end)
 
 mainButton.InputChanged:Connect(function(input)
-    nếu input.UserInputType == Enum.UserInputType.MouseMovement thì
+    if input.UserInputType == Enum.UserInputType.MouseMovement then
         dragInput = input
-    kết thúc
-kết thúc)
+    end
+end)
 
 mainButton.InputEnded:Connect(function(input)
-    nếu input.UserInputType == Enum.UserInputType.MouseButton1 thì
-        TweenService:Tạo(mainButton, FluentTweenInfo, {
-            Kích thước = UDim2.new(0, 60, 0, 60),
-            Độ trong suốt của nền = 0
-        }):Chơi()
-    kết thúc
-kết thúc)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        TweenService:Create(mainButton, fluentTweenInfo, {
+            Size = UDim2.new(0, 60, 0, 60),
+            BackgroundTransparency = 0
+        }):Play()
+    end
+end)
 
 uis.InputChanged:Connect(function(input)
-    if pull and input == dragInput thì
-        cập nhật(không vào)
-    kết thúc
-kết thúc)
+    if dragging and input == dragInput then
+        update(input)
+    end
+end)
 
 mainButton.MouseEnter:Connect(function()
     isHovering = true
     
-    TweenService:Tạo(mainButton, FluentTweenInfo, {
-        Kích thước = UDim2.new(0, 64, 0, 64),
-        Độ trong suốt của nền = 0
-    }):Chơi()
+    TweenService:Create(mainButton, fluentTweenInfo, {
+        Size = UDim2.new(0, 64, 0, 64),
+        BackgroundTransparency = 0
+    }):Play()
     
     TweenService:Create(UIStroke, fluentTweenInfo, {
-        Độ trong suốt = 0,4
-    }):Chơi()
+        Transparency = 0.4
+    }):Play()
     
-    TweenService: Xây(mainButton, hoverTweenInfo, {
+    TweenService:Create(mainButton, hoverTweenInfo, {
         BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-    }):Chơi()
-kết thúc)
+    }):Play()
+end)
 
 mainButton.MouseLeave:Connect(function()
     isHovering = false
     local targetColor = isToggled and Color3.fromRGB(15, 15, 15) or Color3.fromRGB(45, 45, 45)
     
-    TweenService:Tạo(mainButton, FluentTweenInfo, {
-        Kích thước = UDim2.new(0, 60, 0, 60),
-        Độ trong suốt của nền = 0
-    }):Chơi()
+    TweenService:Create(mainButton, fluentTweenInfo, {
+        Size = UDim2.new(0, 60, 0, 60),
+        BackgroundTransparency = 0
+    }):Play()
     
     TweenService:Create(UIStroke, fluentTweenInfo, {
-        Độ trong suốt = 0,7
-    }):Chơi()
+        Transparency = 0.7
+    }):Play()
     
-    TweenService: xây(mainButton, defaultTweenInfo, {
+    TweenService:Create(mainButton, defaultTweenInfo, {
         BackgroundColor3 = targetColor
-    }):Chơi()
-kết thúc)
+    }):Play()
+end)
 
 mainButton.MouseButton1Down:Connect(function()
-    TweenService: Xây(mainButton, hoverTweenInfo, {
-        Kích thước = UDim2.new(0, 58, 0, 58),
+    TweenService:Create(mainButton, hoverTweenInfo, {
+        Size = UDim2.new(0, 58, 0, 58),
         BackgroundColor3 = Color3.fromRGB(10, 10, 10)
-    }):Chơi()
-kết thúc)
+    }):Play()
+end)
 
 mainButton.MouseButton1Click:Connect(function()
     Library.ToggleUI()
@@ -326,15 +326,15 @@ mainButton.MouseButton1Click:Connect(function()
     isToggled = getgenv().UIToggled
     
     local scaleTween = TweenService:Create(mainButton, clickTweenInfo, {
-        Kích thước = UDim2.new(0, 55, 0, 55)
+        Size = UDim2.new(0, 55, 0, 55)
     })
     
     local scaleBackTween = TweenService:Create(mainButton, clickTweenInfo, {
-        Kích thước = UDim2.new(0, 60, 0, 60)
+        Size = UDim2.new(0, 60, 0, 60)
     })
     
     local iconScaleTween = TweenService:Create(icon, clickTweenInfo, {
-        Kích thước = UDim2.new(0, 60, 0, 60)
+        Size = UDim2.new(0, 60, 0, 60)
     })
     
     local targetColor = isToggled and Color3.fromRGB(15, 15, 15) or Color3.fromRGB(45, 45, 45)
@@ -342,44 +342,44 @@ mainButton.MouseButton1Click:Connect(function()
         BackgroundColor3 = targetColor
     })
     
-    nếu bị phai màu thì
+    if faded then
         fadeOutTween:Play()
-    khác
+    else
         fadeInTween:Play()
-    kết thúc
-    mờ = không mờ
+    end
+    faded = not faded
     
     scaleTween:Play()
     iconScaleTween:Play()
     colorTween:Play()
     
-    sinh ra (hàm()
-        chờ (0.15)
+    spawn(function()
+        wait(0.15)
         scaleBackTween:Play()
-    kết thúc)
+    end)
     
-    nếu isToggled thì
-        print("Bật công quy tắc - Công tắc tối ưu đã được kích hoạt")
-    khác
-        print("Công tắc TẮT - Công tắc tối ưu đã vô hiệu hóa")
-    kết thúc
-kết thúc)
+    if isToggled then
+        print("Toggle ON - Ultimate Toggle Activated")
+    else
+        print("Toggle OFF - Ultimate Toggle Deactivated")
+    end
+end)
 
 Library.ToggleUI = function()
     getgenv().UIToggled = not getgenv().UIToggled
     
     if game.CoreGui:FindFirstChild("Night Mystic GUI") then
         for a, b in ipairs(game.CoreGui:GetChildren()) do
-            if b.Name == "Giao diện đồ họa đêm huyền bí" thì
+            if b.Name == "Night Mystic GUI" then
                 b.Enabled = getgenv().UIToggled
-            kết thúc
-        kết thúc
-    kết thúc
+            end
+        end
+    end
     
     isToggled = getgenv().UIToggled
     
     local iconScaleTween = TweenService:Create(icon, defaultTweenInfo, {
-        Kích thước = UDim2.new(0, 60, 0, 60)
+        Size = UDim2.new(0, 60, 0, 60)
     })
     
     local targetColor = isToggled and Color3.fromRGB(15, 15, 15) or Color3.fromRGB(45, 45, 45)
@@ -389,27 +389,27 @@ Library.ToggleUI = function()
     
     iconScaleTween:Play()
     colorTween:Play()
-kết thúc
+end
 
 Library.DestroyUI = function()
     if game.CoreGui:FindFirstChild("Night Mystic GUI") then
         for i, v in ipairs(game.CoreGui:GetChildren()) do
             if string.find(v.Name, "Night Mystic") then
                 v:Destroy()
-            kết thúc
-        kết thúc
-    kết thúc
+            end
+        end
+    end
     
     local toggleGui = game.CoreGui:FindFirstChild("NazuXWindowsToggleUltimate")
-    nếu toggleGui thì
+    if toggleGui then
         toggleGui:Destroy()
-    kết thúc
+    end
     
     getgenv().Nousigi = false
     getgenv().UIToggled = false
     getgenv().AllControls = {}
     getgenv().ReadyForGuiLoaded = false
-kết thúc
+end
 
 local NotiContainer = Instance.new("Frame")
 local NotiList = Instance.new("UIListLayout")
@@ -424,7 +424,7 @@ NotiContainer.Size = UDim2.new(0, 350, 1, -10)
 
 NotiList.Name = "NotiList"
 NotiList.Parent = NotiContainer
-NoteList.SortOrder = Enum.SortOrder.LayoutOrder
+NotiList.SortOrder = Enum.SortOrder.LayoutOrder
 NotiList.VerticalAlignment = Enum.VerticalAlignment.Bottom
 NotiList.Padding = UDim.new(0, 5)
 
@@ -433,18 +433,18 @@ Library_Function.Gui.Parent = game:GetService('CoreGui')
 Library_Function.NotiGui.Parent = game:GetService('CoreGui')
 Library_Function.HideGui.Parent = game:GetService('CoreGui')
 
-hàm Library_Function.Getcolor(color)
-	trở lại {
+function Library_Function.Getcolor(color)
+	return {
 		math.floor(color.r * 255),
 		math.floor(color.g * 255),
 		math.floor(color.b * 255)
 	}
-kết thúc
+end
 
 local libCreateNoti = function(Setting)
-	getgenv().TitleNameNoti = Setting.Title or "";
-	local Description = Setting.Description or Setting.Desc or Setting.Content or "";
-	Thời gian cục bộ = Setting.Duration hoặc Setting.Timeshow hoặc Setting.Delay hoặc 10;
+	getgenv().TitleNameNoti = Setting.Title or ""; 
+	local Description = Setting.Description or Setting.Desc or Setting.Content or ""; 
+	local Duration = Setting.Duration or Setting.Timeshow or Setting.Delay or 10;
 
 	local NotiFrame = Instance.new("Frame")
 	local Noticontainer = Instance.new("Frame")
@@ -498,7 +498,7 @@ local libCreateNoti = function(Setting)
 	local colorR = tostring(Library_Function.Getcolor(getgenv().UIColor['Title Text Color'])[1])
 	local colorG = tostring(Library_Function.Getcolor(getgenv().UIColor['Title Text Color'])[2])
 	local colorB = tostring(Library_Function.Getcolor(getgenv().UIColor['Title Text Color'])[3])
-	màu cục bộ = màuR .. ',' .. màuG .. ',' .. màuB
+	local color = colorR .. ',' .. colorG .. ',' .. colorB
     TextLabelNoti.Text = "<font color=\"rgb(" .. tostring(color or "255,80,80") .. ")\">" .. tostring(TitleNameMain or "Night Mystic") .. "</font> " .. tostring(getgenv().TitleNameNoti or "")
     
 	TextLabelNoti.Name = "TextLabelNoti"
@@ -512,7 +512,7 @@ local libCreateNoti = function(Setting)
 	TextLabelNoti.TextWrapped = true
 	TextLabelNoti.TextXAlignment = Enum.TextXAlignment.Left
 	TextLabelNoti.RichText = true
-	TextLabelNote.TextColor3 = getgenv().UIColor["Màu văn bản GUI"]
+	TextLabelNoti.TextColor3 = getgenv().UIColor["GUI Text Color"]
 
 	CloseContainer.Name = "CloseContainer"
 	CloseContainer.Parent = Topnoti
@@ -527,10 +527,10 @@ local libCreateNoti = function(Setting)
 	CloseImage.BackgroundColor3 = Color3.fromRGB(230, 230, 230)
 	CloseImage.BackgroundTransparency = 1.000
 	CloseImage.Size = UDim2.new(1, 0, 1, 0)
-	CloseImage.Image = "rbxassetid3926305904"
+	CloseImage.Image = "rbxassetid://3926305904"
 	CloseImage.ImageRectOffset = Vector2.new(284, 4)
 	CloseImage.ImageRectSize = Vector2.new(24, 24)
-	CloseImage.ImageColor3 = getgenv().UIColor["Màu biểu tượng tìm kiếm"]
+	CloseImage.ImageColor3 = getgenv().UIColor["Search Icon Color"]
 
 	TextButton.Parent = CloseContainer
 	TextButton.BackgroundColor3 = Color3.fromRGB(230, 230, 230)
@@ -541,83 +541,83 @@ local libCreateNoti = function(Setting)
 	TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 	TextButton.TextSize = 14.000
 
-	nếu Mô tả thì
-		TextLabelNote2.Name = 'TextColor'
+	if Description then
+		TextLabelNoti2.Name = 'TextColor'
 		TextLabelNoti2.Parent = Noticontainer
 		TextLabelNoti2.BackgroundColor3 = Color3.fromRGB(230, 230, 230)
 		TextLabelNoti2.BackgroundTransparency = 1.000
 		TextLabelNoti2.Position = UDim2.new(0, 10, 0, 35)
 		TextLabelNoti2.Size = UDim2.new(1, -15, 0, 0)
 		TextLabelNoti2.Font = Enum.Font.GothamBold
-		TextLabelNoti2.Text = Mô tả
+		TextLabelNoti2.Text = Description
 		TextLabelNoti2.TextSize = 14.000
 		TextLabelNoti2.TextXAlignment = Enum.TextXAlignment.Left
 		TextLabelNoti2.RichText = true
-		TextLabelNote2.TextColor3 = getgenv().UIColor["Màu văn bản"]
+		TextLabelNoti2.TextColor3 = getgenv().UIColor["Text Color"]
 		TextLabelNoti2.AutomaticSize = Enum.AutomaticSize.Y
 		TextLabelNoti2.TextWrapped = true
-	kết thúc
+	end
 
-	hàm phố x remove()
+	local function remove()
 		TweenService:Create(Noticontainer, TweenInfo.new(getgenv().UIColor["Tween Animation 1 Speed"]), {
-			Vị trí = UDim2.new(1, 0, 0, 0)
-		}):Chơi()
-		chờ (.25)
+			Position = UDim2.new(1, 0, 0, 0)
+		}):Play()
+		wait(.25)
 		NotiFrame:Destroy()
-	kết thúc
+	end
 
 	TweenService:Create(Noticontainer, TweenInfo.new(getgenv().UIColor["Tween Animation 1 Speed"]), {
-		Vị trí = UDim2.new(0, 0, 0, 0)
-	}):Chơi()
+		Position = UDim2.new(0, 0, 0, 0)
+	}):Play()
 
 	TextButton.MouseEnter:Connect(function()
 		TweenService:Create(CloseImage, TweenInfo.new(getgenv().UIColor["Tween Animation 1 Speed"]), {
-			ImageColor3 = getgenv().UIColor["Màu nổi bật của biểu tượng tìm kiếm"]
-		}):Chơi()
-	kết thúc)
+			ImageColor3 = getgenv().UIColor["Search Icon Highlight Color"]
+		}):Play()
+	end)
 
 	TextButton.MouseLeave:Connect(function()
 		TweenService:Create(CloseImage, TweenInfo.new(getgenv().UIColor["Tween Animation 1 Speed"]), {
-			ImageColor3 = getgenv().UIColor["Màu biểu tượng tìm kiếm"]
-		}):Chơi()
-	kết thúc)
+			ImageColor3 = getgenv().UIColor["Search Icon Color"]
+		}):Play()
+	end)
 
 	TextButton.MouseButton1Click:Connect(function()
-		chờ (.25)
-		di làm()
-	kết thúc)
+		wait(.25)
+		remove()
+	end)
 
-	sinh ra (hàm()
-		chờ (một gian)
-		di làm()
-	kết thúc)
+	spawn(function()
+		wait(Duration)
+		remove()
+	end)
 
-kết thúc
+end
 
-Thư viện Hàm: Thông báo (Thiết lập, bỏ qua)
-	nếu không phải getgenv().Config hoặc bỏ qua thì
-		local bộ s, e = pcall(function()
+function Library:Notify(Setting, bypass)
+	if not getgenv().Config or bypass then
+		local s, e = pcall(function()
 			libCreateNoti(Setting)
-		kết thúc)
-		nếu e thì
-			trong(s)
-		kết thúc
-	kết thúc
-kết thúc
+		end)
+		if e then
+			print(e)
+		end
+	end
+end
 
-Thư viện Hàm:CreateWindow(Setting)
+function Library:CreateWindow(Setting)
     local TitleNameMain = Setting.Title or "Night Mystic"
     getgenv().MainDesc = Setting.Desc or Setting.Subtitle or ""
     
-    nếu Setting.Image thì
+    if Setting.Image then
         getgenv().UIColor["Logo Image"] = Setting.Image
-    kết thúc
+    end
     
 	local djtmemay = false
 	cac = false
 
 	local Main = Instance.new("Frame")
-	maingui local = Instance.new("ImageLabel")
+	local maingui = Instance.new("ImageLabel")
 	local MainCorner = Instance.new("UICorner")
 	local TopMain = Instance.new("Frame")
 	local Ruafimg = Instance.new("ImageLabel")
@@ -631,7 +631,7 @@ Thư viện Hàm:CreateWindow(Setting)
 	local UIPage = Instance.new("UIPageLayout")
 	local Concacontainer = Instance.new("Frame")
 	local Concacmain = Instance.new("Frame")
-	MainContainer cục bộ
+	local MainContainer
 
 	Main.Name = "Main"
 	Main.Parent = Library_Function.Gui
@@ -648,17 +648,17 @@ Thư viện Hàm:CreateWindow(Setting)
 	maingui.AnchorPoint = Vector2.new(0.5, 0.5)
 	maingui.BackgroundColor3 = Color3.fromRGB(230, 230, 230)
 	maingui.BackgroundTransparency = 1.000
-	maingui.Position = UDim2.new(0,5, 0, 0,5, 0)
+	maingui.Position = UDim2.new(0.5, 0, 0.5, 0)
 	maingui.Selectable = true
 	maingui.Size = UDim2.new(1, 30, 1, 30)
 	maingui.Image = "rbxassetid://8068653048"
 	maingui.ScaleType = Enum.ScaleType.Slice
 	maingui.SliceCenter = Rect.new(15, 15, 175, 175)
 	maingui.SliceScale = 1.300
-	maingui.ImageColor3 = getgenv().UIColor["Màu đường viền"]
+	maingui.ImageColor3 = getgenv().UIColor["Border Color"]
 	maingui.ImageTransparency = 1
 
-	maingui.ImageColor3 = getgenv().UIColor['Màu văn bản tiêu đề']
+	maingui.ImageColor3 = getgenv().UIColor['Title Text Color']
 
 	MainContainer = Instance.new("ImageLabel")
 	MainContainer.Name = "MainContainer"
@@ -711,7 +711,7 @@ Thư viện Hàm:CreateWindow(Setting)
 	local TopStroke = Instance.new("Frame", TopMain)
 	TopStroke.Name = "TopStroke"
 	TopStroke.BackgroundColor3 = Color3.fromRGB(90, 90, 70)
-	TopStroke.BackgroundTransparency = 0,6
+	TopStroke.BackgroundTransparency = 0.6
 	TopStroke.BorderSizePixel = 0
 	TopStroke.Position = UDim2.new(0, 0, 1, -1)
 	TopStroke.Size = UDim2.new(1, 0, 0, 1)
@@ -735,7 +735,7 @@ Thư viện Hàm:CreateWindow(Setting)
 	TextLabelMain.TextSize = 16.000
 	TextLabelMain.TextWrapped = true
 	TextLabelMain.TextXAlignment = Enum.TextXAlignment.Left
-	TextLabelMain.TextColor3 = getgenv().UIColor["Màu văn bản GUI"]
+	TextLabelMain.TextColor3 = getgenv().UIColor["GUI Text Color"]
    TextLabelMain.Text = "<font color=\"rgb(0,0,0)\">" .. tostring(TitleNameMain or "Night Mystic") .. "</font> <font color=\"rgb(255,255,255)\">" .. tostring(getgenv().MainDesc or "") .. "</font>"
 	PageControl.Name = "Background1"
 	PageControl.Parent = Concacmain
@@ -790,7 +790,7 @@ Thư viện Hàm:CreateWindow(Setting)
 	ControlTitle.Text = TitleNameMain
 	ControlTitle.TextSize = 14.000
 	ControlTitle.TextXAlignment = Enum.TextXAlignment.Left
-	ControlTitle.TextColor3 = getgenv().UIColor["GUI Màu văn bản"]
+	ControlTitle.TextColor3 = getgenv().UIColor["GUI Text Color"]
 
 	local PageSearch = Instance.new("Frame")
 	local PageSearchCorner = Instance.new("UICorner")
@@ -822,7 +822,7 @@ Thư viện Hàm:CreateWindow(Setting)
 	SearchIcon.BackgroundTransparency = 1
 	SearchIcon.Position = UDim2.new(0.5, 0, 0.5, 0)
 	SearchIcon.Size = UDim2.new(0, 16, 0, 16)
-	SearchIcon.Image = "rbxassetid 8154282545"
+	SearchIcon.Image = "rbxassetid://8154282545"
 	SearchIcon.ImageColor3 = Color3.fromRGB(240, 240, 230)
 
     SearchBox.Name = "SearchBox"
@@ -835,7 +835,7 @@ Thư viện Hàm:CreateWindow(Setting)
     SearchBox.Size = UDim2.new(1, -30, 1, 0)
     SearchBox.Font = Enum.Font.GothamBold
     SearchBox.PlaceholderColor3 = Color3.fromRGB(170, 170, 160)
-    SearchBox.PlaceholderText = "Tìm kiếm mục hoặc chức năng..."
+    SearchBox.PlaceholderText = "Search section or Function..."
     SearchBox.Text = ""
     SearchBox.TextColor3 = Color3.fromRGB(235, 235, 230)
     SearchBox.TextSize = 14
@@ -860,7 +860,7 @@ Thư viện Hàm:CreateWindow(Setting)
 
 	UIListLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
 		ControlList.CanvasSize = UDim2.new(0, 0, 0, UIListLayout.AbsoluteContentSize.Y + 5)
-	kết thúc)
+	end)
 
 	local Shadow = Instance.new("ImageLabel", Main)
 	Shadow.Name = "Shadow"
@@ -870,43 +870,43 @@ Thư viện Hàm:CreateWindow(Setting)
 	Shadow.Position = UDim2.new(0.5, 0, 0.5, 0)
 	Shadow.Size = UDim2.new(1, 40, 1, 40)
 	Shadow.ZIndex = 0
-	Shadow.Image = "rbxassetid5028857084"
+	Shadow.Image = "rbxassetid://5028857084"
 	Shadow.ImageTransparency = 0.35
 	Shadow.ScaleType = Enum.ScaleType.Slice
 	Shadow.SliceCenter = Rect.new(24, 24, 276, 276)
 
     local sectionInfo = {}
     
-    nếu không phải GlobalSearch thì
+    if not GlobalSearch then
         GlobalSearch = function(searchText)
             searchText = string.lower(searchText)
             
-            nếu searchText == "" thì
+            if searchText == "" then
                 for _, control in pairs(getgenv().AllControls) do
                     control.TabButton.Visible = true
                     control.Section.Visible = true
                     control.Element.Visible = true
-                kết thúc
+                end
                 for _, tab in pairs(ControlList:GetChildren()) do
-                    if tab không phải là UIListLayout thì
+                    if not tab:IsA('UIListLayout') then
                         tab.Visible = true
-                    kết thúc
-                kết thúc
-                trở lại
-            kết thúc
+                    end
+                end
+                return
+            end
             
             for _, control in pairs(getgenv().AllControls) do
                 control.Section.Visible = false
                 control.Element.Visible = false
-            kết thúc
+            end
             
             for _, tab in pairs(ControlList:GetChildren()) do
-                if tab không phải là UIListLayout thì
+                if not tab:IsA('UIListLayout') then
                     tab.Visible = false
-                kết thúc
-            kết thúc
+                end
+            end
             
-            local các phần chứa các phần tử = {}
+            local sectionsWithElements = {}
             local elementsInSection = {}
             
             for _, control in pairs(getgenv().AllControls) do
@@ -916,44 +916,44 @@ Thư viện Hàm:CreateWindow(Setting)
                 local elementFound = string.find(elementName, searchText, 1, true) ~= nil
                 local sectionFound = string.find(sectionName, searchText, 1, true) ~= nil
                 
-                if not has no element in control parts (control.Section) thì
+                if not elementsInSection[control.Section] then
                     elementsInSection[control.Section] = {}
-                kết thúc
+                end
                 table.insert(elementsInSection[control.Section], {
-                    Kiểm soát = Kiểm soát,
+                    control = control,
                     elementFound = elementFound,
-                    phần đã được tìm thấy = phần đã được tìm thấy
+                    sectionFound = sectionFound
                 })
                 
-                if you find the element thì
+                if elementFound then
                     sectionsWithElements[control.Section] = true
-                kết thúc
-            kết thúc
+                end
+            end
             
             local foundTabs = {}
             
-            đối với các phần tử được thực thi theo cặp (elementsInSection)
+            for section, elements in pairs(elementsInSection) do
                 local shouldShowSection = false
                 local hasElementMatch = false
                 
                 for _, elementInfo in ipairs(elements) do
-                    if elementInfo.sectionFound thì
+                    if elementInfo.sectionFound then
                         shouldShowSection = true
-                    kết thúc
-                    if elementInfo.elementFound thì
+                    end
+                    if elementInfo.elementFound then
                         hasElementMatch = true
-                    kết thúc
-                kết thúc
+                    end
+                end
                 
                 for _, elementInfo in ipairs(elements) do
-                    điều khiển cục bộ = elementInfo.control
+                    local control = elementInfo.control
                     
-                    if elementInfo.elementFound thì
+                    if elementInfo.elementFound then
                         control.Element.Visible = true
                         
-                        if elementInfo.sectionFound hoặc hasElementMatch thì
+                        if elementInfo.sectionFound or hasElementMatch then
                             control.Section.Visible = true
-                        kết thúc
+                        end
                         
                         foundTabs[control.TabName] = true
                         control.TabButton.Visible = true
@@ -963,26 +963,26 @@ Thư viện Hàm:CreateWindow(Setting)
                         
                         foundTabs[control.TabName] = true
                         control.TabButton.Visible = true
-                    kết thúc
-                kết thúc
-            kết thúc
+                    end
+                end
+            end
             
             for tabName, _ in pairs(foundTabs) do
                 for _, tab in pairs(ControlList:GetChildren()) do
                     if not tab:IsA('UIListLayout') and string.find(tab.Name, tabName, 1, true) then
                         tab.Visible = true
-                    kết thúc
-                kết thúc
-            kết thúc
+                    end
+                end
+            end
             
-            if next tab không tìm thấy thì
-            kết thúc
-        kết thúc
-    kết thúc
+            if not next(foundTabs) then
+            end
+        end
+    end
     
     SearchBox:GetPropertyChangedSignal("Text"):Connect(function()
-        Tìm kiếm toàn cầu (SearchBox.Text)
-    kết thúc)
+        GlobalSearch(SearchBox.Text)
+    end)
 
 	local Main_Function = {}
 
@@ -990,7 +990,7 @@ Thư viện Hàm:CreateWindow(Setting)
 	local LayoutOrder = -1
 	local PageCounter = 1
 
-		Hàm Main_Function:AddTab(PageName, IconId)
+		function Main_Function:AddTab(PageName, IconId)
 
 		local Page_Name = tostring(PageName)
 		local Page_Title = Page_Name
@@ -1015,12 +1015,12 @@ Thư viện Hàm:CreateWindow(Setting)
         TabIcon.BackgroundTransparency = 1.000
         TabIcon.Position = UDim2.new(0, 10, 0.5, 0)
         TabIcon.AnchorPoint = Vector2.new(0, 0.5)
-        TabIcon.Size = UDim2.new(0, 15, 0, 15)
-        TabIcon.Image = IconId hoặc ""
+        TabIcon.Size = UDim2.new(0, 15, 0, 15) 
+        TabIcon.Image = IconId or "" 
         
-        if IconId không phải hoặc IconId == "" thì
+        if not IconId or IconId == "" then
             TabIcon.Visible = false
-        kết thúc
+        end
 
 		PageNameControl.Name = Page_Name .. "_Control"
 		PageNameControl.Parent = ControlList
@@ -1043,7 +1043,7 @@ Thư viện Hàm:CreateWindow(Setting)
 		Line.Parent = Frame
 		Line.AnchorPoint = Vector2.new(0, 0.5)
 		Line.BackgroundColor3 = Color3.fromRGB(230, 230, 230)
-		Độ trong suốt của đường nền = 1.000
+		Line.BackgroundTransparency = 1.000
 		Line.Position = UDim2.new(0, 0, 0.5, 0)
 		Line.Size = UDim2.new(0, 14, 1, 0)
 
@@ -1053,24 +1053,24 @@ Thư viện Hàm:CreateWindow(Setting)
 		InLine.BorderSizePixel = 0
 		InLine.Position = UDim2.new(0.5, 0, 0.5, 0)
 		InLine.Size = UDim2.new(1, -10, 1, -10)
-		InLine.BackgroundColor3 = getgenv().UIColor["Màu được chọn trên trang"]
+		InLine.BackgroundColor3 = getgenv().UIColor["Page Selected Color"]
 		InLine.BackgroundTransparency = 1.000
 
 		LineCorner.Name = "LineCorner"
-		Góc đường thẳng.Của cha = Đường thẳng
+		LineCorner.Parent = InLine
 
 		TabTitleContainer.Name = "TabTitleContainer"
 		TabTitleContainer.Parent = Frame
 		TabTitleContainer.BackgroundColor3 = Color3.fromRGB(230, 230, 230)
 		TabTitleContainer.BackgroundTransparency = 1.000
         
-        if IconId và IconId ~= "" thì
-		    TabTitleContainer.Position = UDim2.new(0, 35, 0, 0)
+        if IconId and IconId ~= "" then
+		    TabTitleContainer.Position = UDim2.new(0, 35, 0, 0) 
             TabTitleContainer.Size = UDim2.new(1, -35, 1, 0)
-        khác
+        else
             TabTitleContainer.Position = UDim2.new(0, 15, 0, 0)
             TabTitleContainer.Size = UDim2.new(1, -15, 1, 0)
-        kết thúc
+        end
 
 		TabTitle.Name = "GUITextColor"
 		TabTitle.Parent = TabTitleContainer
@@ -1078,12 +1078,12 @@ Thư viện Hàm:CreateWindow(Setting)
 		TabTitle.BackgroundTransparency = 1.000
 		TabTitle.Size = UDim2.new(1, 0, 1, 0)
 		TabTitle.Font = Enum.Font.GothamBold
-		Tab tiêu đề.Văn bản = Tên_trang
+		TabTitle.Text = Page_Name
 		TabTitle.TextSize = 14.000
 		TabTitle.TextXAlignment = Enum.TextXAlignment.Left
-		TabTitle.TextColor3 = getgenv().UIColor["GUI Màu văn bản"]
+		TabTitle.TextColor3 = getgenv().UIColor["GUI Text Color"]
 
-		PageButton.Name = "TrangButton"
+		PageButton.Name = "PageButton"
 		PageButton.Parent = PageNameControl
 		PageButton.BackgroundColor3 = Color3.fromRGB(230, 230, 230)
 		PageButton.BackgroundTransparency = 1.000
@@ -1102,8 +1102,8 @@ Thư viện Hàm:CreateWindow(Setting)
 
 		local CurrentPage = PageCounter
 		PageCounter = PageCounter + 1
-		PageContainer.Name = "Trang" .. Trang hiện tại
-		TrangContainer.Parent = Trang chính
+		PageContainer.Name = "Page" .. CurrentPage
+		PageContainer.Parent = MainPage
 		PageContainer.BackgroundColor3 = getgenv().UIColor["Background 1 Color"]
 		PageContainer.Position = UDim2.new(0, 190, 0, 30)
 		PageContainer.Size = UDim2.new(0, 435, 0, 325)
@@ -1123,7 +1123,7 @@ Thư viện Hàm:CreateWindow(Setting)
 		PageTitle.Text = Page_Title
 		PageTitle.TextSize = 16.000
 		PageTitle.TextXAlignment = Enum.TextXAlignment.Left
-		PageTitle.TextColor3 = getgenv().UIColor["GUI Màu văn bản"]
+		PageTitle.TextColor3 = getgenv().UIColor["GUI Text Color"]
 
 		PageList.Name = "PageList"
 		PageList.Parent = PageContainer
@@ -1146,7 +1146,7 @@ Thư viện Hàm:CreateWindow(Setting)
 		Pagelistlayout.Padding = UDim.new(0, 5)
 		Pagelistlayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
 			PageList.CanvasSize = UDim2.new(0, 0, 0, Pagelistlayout.AbsoluteContentSize.Y)
-		kết thúc)
+		end)
 
 		local PageSearch = Instance.new("Frame")
 		local PageSearchCorner = Instance.new("UICorner")
@@ -1155,7 +1155,7 @@ Thư viện Hàm:CreateWindow(Setting)
 		local SearchButton = Instance.new("TextButton")
 		local SearchBox = Instance.new("TextBox")
 
-		PageSearch.Name = "Tìm kiếm trang"
+		PageSearch.Name = "Page Search"
 		PageSearch.Parent = PageContainer
 		PageSearch.AnchorPoint = Vector2.new(1, 0)
 		PageSearch.BackgroundColor3 = getgenv().UIColor["Background 2 Color"]
@@ -1180,10 +1180,10 @@ Thư viện Hàm:CreateWindow(Setting)
 		SearchIcon.BackgroundTransparency = 1.000
 		SearchIcon.Position = UDim2.new(0.5, 0, 0.5, 0)
 		SearchIcon.Size = UDim2.new(0, 16, 0, 16)
-		SearchIcon.Image = "rbxassetid 8154282545"
-		SearchIcon.ImageColor3 = getgenv().UIColor["Màu biểu tượng tìm kiếm"]
+		SearchIcon.Image = "rbxassetid://8154282545"
+		SearchIcon.ImageColor3 = getgenv().UIColor["Search Icon Color"]
 
-		SearchButton.Name = "Nút tìm kiếm"
+		SearchButton.Name = "Search Button"
 		SearchButton.Parent = SearchFrame
 		SearchButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		SearchButton.BackgroundTransparency = 1.000
@@ -1193,7 +1193,7 @@ Thư viện Hàm:CreateWindow(Setting)
 		SearchButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 		SearchButton.TextSize = 14.000
 
-		SearchBox.Name = "Tìm kiếm"
+		SearchBox.Name = "Search Box"
 		SearchBox.Parent = PageSearch
 		SearchBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		SearchBox.BackgroundTransparency = 1.000
@@ -1203,96 +1203,96 @@ Thư viện Hàm:CreateWindow(Setting)
 		SearchBox.Text = ""
 		SearchBox.TextSize = 14.000
 		SearchBox.TextXAlignment = Enum.TextXAlignment.Left
-		SearchBox.PlaceholderText = "Tìm kiếm mục tên"
-		SearchBox.PlaceholderColor3 = getgenv().UIColor["Màu chữ giữ chỗ"]
-		SearchBox.TextColor3 = getgenv().UIColor["Màu chữ"]
+		SearchBox.PlaceholderText = "Search Section name"
+		SearchBox.PlaceholderColor3 = getgenv().UIColor["Placeholder Text Color"]
+		SearchBox.TextColor3 = getgenv().UIColor["Text Color"]
 		
-		cục bộ Đã mở = sai
+		local Openned = false 
 
 		SearchButton.MouseEnter:Connect(function()
 			TweenService:Create(SearchIcon, TweenInfo.new(getgenv().UIColor["Tween Animation 3 Speed"]), {
-				ImageColor3 = getgenv().UIColor["Màu nổi bật của biểu tượng tìm kiếm"]
-			}):Chơi()
-		kết thúc)
+				ImageColor3 = getgenv().UIColor["Search Icon Highlight Color"]
+			}):Play()
+		end)
 
 		SearchButton.MouseLeave:Connect(function()
 			TweenService:Create(SearchIcon, TweenInfo.new(getgenv().UIColor["Tween Animation 3 Speed"]), {
-				ImageColor3 = getgenv().UIColor["Màu biểu tượng tìm kiếm"]
-			}):Chơi()
-		kết thúc)
+				ImageColor3 = getgenv().UIColor["Search Icon Color"]
+			}):Play()
+		end)
 
 		SearchButton.MouseButton1Click:Connect(function()
-			Đã xong = chưa
-			local size = Đã mở và UDim2.new(0, 175, 0, 20) hoặc UDim2.new(0, 20, 0, 20)
+			Openned = not Openned
+			local size = Openned and UDim2.new(0, 175, 0, 20) or  UDim2.new(0, 20, 0, 20)
 			game.TweenService:Create(PageSearch, TweenInfo.new(getgenv().UIColor["Tween Animation 2 Speed"]), {
 				Size = size
-			}):Chơi()
-		kết thúc)
+			}):Play()
+		end)
 
-		hàm local HideOtherFrame()
-			for i, v in next, PageList:GetChildren() do
-				if not must v:IsA('UIListLayout') thì
+		local function hideOtherFrame()
+			for i, v in next, PageList:GetChildren() do 
+				if not v:IsA('UIListLayout') then 
 					v.Visible = false
-				kết thúc
-			kết thúc
-		kết thúc
+				end
+			end
+		end
 		
-		hàm local showFrameName()
+		local function showFrameName()
 			for i, v in pairs(PageList:GetChildren()) do
-				if not must v:IsA('UIListLayout') thì
-					if string.find(string.lower(v.Name), string.lower(SearchBox.Text)) then
+				if not v:IsA('UIListLayout') then 
+					if string.find(string.lower(v.Name), string.lower(SearchBox.Text)) then 
 						v.Visible = true
-					kết thúc
-				kết thúc
-			kết thúc
-		kết thúc
+					end
+				end
+			end
+		end
 		
 		SearchBox:GetPropertyChangedSignal("Text"):Connect(function()
-			khung khác()
+			hideOtherFrame()
 			showFrameName()
-		kết thúc)
+		end)
 
 		for i, v in pairs(ControlList:GetChildren()) do
-			nếu không phải (v:IsA('UIListLayout')) thì
-				nếu i == 2 thì
+			if not (v:IsA('UIListLayout')) then
+				if i == 2 then 
 					v.Frame.Line.PageInLine.BackgroundTransparency = 0
-				kết thúc
-			kết thúc
-		kết thúc
+				end
+			end
+		end
 
 		PageButton.MouseButton1Click:Connect(function()
-			if tostring(UIPage.CurrentPage) == PageContainer.Name then
-				trở lại
-			kết thúc
+			if tostring(UIPage.CurrentPage) == PageContainer.Name then 
+				return
+			end
 
 			for i, v in pairs(MainPage:GetChildren()) do
-				if not must (v:IsA('UIPageLayout')) và not must (v:IsA('UICorner')) thì
+				if not (v:IsA('UIPageLayout')) and not (v:IsA('UICorner')) then
 					v.Visible = false
-				kết thúc
-			kết thúc
+				end
+			end
 
-			PageContainer.Visible = true
+			PageContainer.Visible = true 
 			UIPage:JumpTo(PageContainer)
 
 			for i, v in next, ControlList:GetChildren() do
-				nếu không phải (v:IsA('UIListLayout')) thì
-					if v.Name == Page_Name .. "_Control" thì
+				if not (v:IsA('UIListLayout')) then
+					if v.Name == Page_Name .. "_Control" then 
 						TweenService:Create(v.Frame.Line.PageInLine, TweenInfo.new(getgenv().UIColor["Tween Animation 1 Speed"]), {
-							Độ trong suốt của nền = 0
-						}):Chơi()
-					khác
+							BackgroundTransparency = 0
+						}):Play()
+					else
 						TweenService:Create(v.Frame.Line.PageInLine, TweenInfo.new(getgenv().UIColor["Tween Animation 1 Speed"]), {
-							Độ trong suốt của nền = 1
-						}):Chơi()
-					kết thúc
-				kết thúc
-			kết thúc
-		kết thúc)
+							BackgroundTransparency = 1
+						}):Play()
+					end
+				end
+			end
+		end)
 
 		local pageFunction = {}
 
-		Hàm pageFunction:AddSection(Section_Name, Toggleable, SectionGap, SectionColor)
-			local Toggleable = Có thể chuyển đổi hoặc sai
+		function pageFunction:AddSection(Section_Name, Toggleable, SectionGap, SectionColor)
+			local Toggleable = Toggleable or false
 			local Section = Instance.new("Frame")
 			local UICorner = Instance.new("UICorner")
 			local Topsec = Instance.new("Frame")
@@ -1302,10 +1302,10 @@ Thư viện Hàm:CreateWindow(Setting)
 			local SectionList = Instance.new("UIListLayout")
 			
 			Section.Name = Section_Name .. "_Dot"
-			Phần cha = Danh sách trang
+			Section.Parent = PageList
 			Section.Size = UDim2.new(1, -5, 0, 30)
 			Section.BackgroundColor3 = Color3.fromRGB(48, 48, 56)
-			Độ trong suốt của nền = 0,25
+			Section.BackgroundTransparency = 0.25
 			Section.ClipsDescendants = true
 
 			local sectionStroke = Instance.new("UIStroke", Section)
@@ -1327,7 +1327,7 @@ Thư viện Hàm:CreateWindow(Setting)
 			UICorner.Parent = Section
 
 			Topsec.Name = "Topsec"
-			Topsec.Parent = Phần
+			Topsec.Parent = Section
 			Topsec.BackgroundColor3 = Color3.fromRGB(230, 230, 230)
 			Topsec.BackgroundTransparency = 1.000
 			Topsec.Size = UDim2.new(0, 415, 0, 30)
@@ -1335,12 +1335,12 @@ Thư viện Hàm:CreateWindow(Setting)
 			Sectiontitle.Name = "Sectiontitle"
 			Sectiontitle.Parent = Topsec
 			Sectiontitle.BackgroundColor3 = Color3.fromRGB(230, 230, 230)
-			Tiêu đề phần.Độ trong suốt của nền = 1.000
+			Sectiontitle.BackgroundTransparency = 1.000
 			Sectiontitle.Size = UDim2.new(1, 0, 1, 0)
 			Sectiontitle.Font = Enum.Font.GothamBold
-			Tiêu đề phần.Văn bản = Tên_phần
+			Sectiontitle.Text = Section_Name
 			Sectiontitle.TextSize = 14.000
-			Mụctitle.TextColor3 = getgenv().UIColor["Màu chữ phần"]
+			Sectiontitle.TextColor3 = getgenv().UIColor["Section Text Color"]
 
 			Linesec.Name = "Linesec"
 			Linesec.Parent = Topsec
@@ -1358,7 +1358,7 @@ Thư viện Hàm:CreateWindow(Setting)
 			LineShadow.Position = UDim2.new(0.5, 0, 0.5, 0)
 			LineShadow.Size = UDim2.new(1, 8, 1, 8)
 			LineShadow.ZIndex = 0
-			LineShadow.Image = "rbxassetid5028857084"
+			LineShadow.Image = "rbxassetid://5028857084"
 			LineShadow.ImageTransparency = 0.6
 			LineShadow.ScaleType = Enum.ScaleType.Slice
 			LineShadow.SliceCenter = Rect.new(24, 24, 276, 276)
@@ -1376,12 +1376,12 @@ Thư viện Hàm:CreateWindow(Setting)
 			SectionList.SortOrder = Enum.SortOrder.LayoutOrder
 			SectionList.Padding = UDim.new(0, 5)
 
-			Phần địa phương Y có kích thước
+			local SizeSectionY
 			local sectionIsVisible = false
-			nếu có thể bật/tắt thì
+			if Toggleable then
 				local VisibilitySectionFrame = Instance.new("Frame")
 				local VisibilitySectionFrameCorner = Instance.new("UICorner")
-				khả năng hiển thị cục bộ = Instance.new("ImageButton")
+				local visibility = Instance.new("ImageButton")
 				local visibility_off = Instance.new("ImageButton")
 				local VisibilityButton = Instance.new("TextButton")
 				VisibilityButton.Name = "VisibilityButton"
@@ -1417,7 +1417,7 @@ Thư viện Hàm:CreateWindow(Setting)
 				visibility.Position = UDim2.new(0.5, 0, 0.5, 0)
 				visibility.Size = UDim2.new(1, -4, 1, -4)
 				visibility.ZIndex = 2
-				visibility.Image = "rbxassetid3926307971"
+				visibility.Image = "rbxassetid://3926307971"
 				visibility.ImageRectOffset = Vector2.new(84, 44)
 				visibility.ImageRectSize = Vector2.new(36, 36)
 				visibility.ImageTransparency = 1
@@ -1429,57 +1429,57 @@ Thư viện Hàm:CreateWindow(Setting)
 				visibility_off.Position = UDim2.new(0.5, 0, 0.5, 0)
 				visibility_off.Size = UDim2.new(1, -4, 1, -4)
 				visibility_off.ZIndex = 2
-				visibility_off.Image = "rbxassetid3926307971"
+				visibility_off.Image = "rbxassetid://3926307971"
 				visibility_off.ImageRectOffset = Vector2.new(564, 44)
 				visibility_off.ImageRectSize = Vector2.new(36, 36)
 				visibility_off.ImageTransparency = 0
 				VisibilityButton.MouseButton1Down:Connect(function()
 					sectionIsVisible = not sectionIsVisible
 					TweenService:Create(visibility, TweenInfo.new(getgenv().UIColor["Tween Animation 1 Speed"] / 2), {
-						ImageTransparency = partIsVisible và 0 hoặc 1
-					}):Chơi()
+						ImageTransparency = sectionIsVisible and 0 or 1
+					}):Play()
 					wait(getgenv().UIColor["Tween Animation 1 Speed"] / 4)
 					TweenService:Create(visibility_off, TweenInfo.new(getgenv().UIColor["Tween Animation 1 Speed"] / 2), {
-						ImageTransparency = partIsVisible và 1 hoặc 0
-					}):Chơi()
+						ImageTransparency = sectionIsVisible and 1 or 0
+					}):Play()
 					TweenService:Create(Section, TweenInfo.new(getgenv().UIColor["Tween Animation 1 Speed"]), {
-						Kích thước = UDim2.new(1, -5, 0, (sectionIsVisible và SizeSectionY hoặc 30))
-					}):Chơi()
-				kết thúc)
-			kết thúc
-			nếu SectionGap thì
+						Size =  UDim2.new(1, -5, 0, (sectionIsVisible and SizeSectionY or 30))
+					}):Play()
+				end)
+			end
+			if SectionGap then
 				local SectionGap = Instance.new("Frame")
 				SectionGap.Name = "SectionGap"
 				SectionGap.Parent = PageList
 				SectionGap.Size = UDim2.new(1, -5, 0, 30)
 				SectionGap.ClipsDescendants = true
 				SectionGap.Transparency = 1
-			kết thúc
+			end
 
 			SectionList:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
-				if (không thể bật/tắt) thì
+				if (not Toggleable) then
 					Section.Size = UDim2.new(1, -5, 0, SectionList.AbsoluteContentSize.Y + 5)
-				kết thúc
+				end
 				SizeSectionY = SectionList.AbsoluteContentSize.Y + 5
-				if the display part that thì
+				if sectionIsVisible then
 					TweenService:Create(Section, TweenInfo.new(getgenv().UIColor["Tween Animation 1 Speed"]), {
-						Kích thước = UDim2.new(1, -5, 0, SizeSectionY)
-					}):Chơi()
-				kết thúc
-			kết thúc)
+						Size =  UDim2.new(1, -5, 0, SizeSectionY)
+					}):Play()
+				end
+			end)
 			local sectionFunction = {}
-						phần chức năngFunction:AddToggle(idk,Setting)
+						function sectionFunction:AddToggle(idk,Setting)
 				local Title = tostring(Setting.Text or Setting.Title) or ""
-				local Desc = Setting.Desc hoặc Setting.Description
+				local Desc = Setting.Desc or Setting.Description
 				local Default = Setting.Default
-				nếu Mặc định == nil thì
-					Mặc định = sai
-				kết thúc
+				if Default == nil then
+					Default = false
+				end
 				local Callback = Setting.Callback
 				local ToggleFrame = Instance.new("Frame")
 				local TogFrame1 = Instance.new("Frame")
-				check local = Instance.new("ImageLabel")
-				check local = Instance.new("Frame")
+				local checkbox = Instance.new("ImageLabel")
+				local check = Instance.new("Frame")
 				local ToggleDesc = Instance.new("TextLabel")
 				local ToggleTitle = Instance.new("TextLabel")
 				local ToggleBg = Instance.new("Frame")
@@ -1492,13 +1492,13 @@ Thư viện Hàm:CreateWindow(Setting)
 				ToggleFrame.BackgroundColor3 = Color3.fromRGB(230, 230, 230)
 				ToggleFrame.BackgroundTransparency = 1.000
 				
-				if Desc và Desc ~= "" thì
+				if Desc and Desc ~= "" then
 					ToggleFrame.AutomaticSize = Enum.AutomaticSize.Y
 					ToggleFrame.Size = UDim2.new(1, 0, 0, 0)
-				khác
+				else
 					ToggleFrame.AutomaticSize = Enum.AutomaticSize.None
 					ToggleFrame.Size = UDim2.new(1, 0, 0, 30)
-				kết thúc
+				end
 
 				TogFrame1.Name = "TogFrame1"
 				TogFrame1.Parent = ToggleFrame
@@ -1515,16 +1515,16 @@ Thư viện Hàm:CreateWindow(Setting)
 				checkbox.BackgroundTransparency = 1.000
 				checkbox.Position = UDim2.new(1, -5, 0.5, 0)
 				checkbox.Size = UDim2.new(0, 20, 0, 20)
-				checkbox.Image = "rbxassetid4552505888"
+				checkbox.Image = "rbxassetid://4552505888"
 				checkbox.ImageColor3 = getgenv().UIColor["Toggle Border Color"]
 				
 				check.Name = "check"
-				kiểm tra.Cha = hộp kiểm
+				check.Parent = checkbox
 				check.AnchorPoint = Vector2.new(0.5, 0.5)
 				check.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
 				check.Position = UDim2.new(0.5, 0, 0.5, 0)
 				
-				if Desc và Desc ~= "" thì
+				if Desc and Desc ~= "" then
 					ToggleDesc.Name = "ToggleDesc"
 					ToggleDesc.Parent = TogFrame1
 					ToggleDesc.BackgroundColor3 = Color3.fromRGB(230, 230, 230)
@@ -1543,28 +1543,28 @@ Thư viện Hàm:CreateWindow(Setting)
 					local pad = Instance.new("UIPadding", TogFrame1)
 					pad.PaddingTop = UDim.new(0, 5)
 					pad.PaddingBottom = UDim.new(0, 5)
-				kết thúc
+				end
 				
 				ToggleTitle.Name = "TextColor"
 				ToggleTitle.Parent = TogFrame1
 				ToggleTitle.BackgroundColor3 = Color3.fromRGB(230, 230, 230)
 				ToggleTitle.BackgroundTransparency = 1.000
 				
-				if Desc và Desc ~= "" thì
+				if Desc and Desc ~= "" then
 					ToggleTitle.Position = UDim2.new(0, 10, 0, 5)
 					ToggleTitle.Size = UDim2.new(1, -50, 0, 20)
-				khác
+				else
 					ToggleTitle.Position = UDim2.new(0, 10, 0, 0)
 					ToggleTitle.Size = UDim2.new(1, -50, 1, 0)
-				kết thúc
+				end
 				
 				ToggleTitle.Font = Enum.Font.GothamBlack
-				ToggleTitle.Text = Tiêu đề
+				ToggleTitle.Text = Title
 				ToggleTitle.TextSize = 14.000
 				ToggleTitle.TextXAlignment = Enum.TextXAlignment.Left
 				ToggleTitle.TextYAlignment = Enum.TextYAlignment.Center
 				ToggleTitle.RichText = true
-				ToggleTitle.TextColor3 = getgenv().UIColor["Màu chữ"]
+				ToggleTitle.TextColor3 = getgenv().UIColor["Text Color"]
 				
 				ToggleBg.Name = "Background1"
 				ToggleBg.Parent = TogFrame1
@@ -1595,56 +1595,56 @@ Thư viện Hàm:CreateWindow(Setting)
 				ToggleList.VerticalAlignment = Enum.VerticalAlignment.Center
 				ToggleList.Padding = UDim.new(0, 5)
 				
-				function local ChangeStage(val)
+				local function ChangeStage(val)
 					local csize = val and UDim2.new(0.6, 0, 0.6, 0) or UDim2.new(0, 0, 0, 0)
 					local pos = val and UDim2.new(0.5, 0, 0.5, 0) or UDim2.new(0.5, 0, 0.5, 0)
 					local apos = val and Vector2.new(0.5, 0.5) or Vector2.new(0.5, 0.5)
 					game.TweenService:Create(check, TweenInfo.new(getgenv().UIColor["Tween Animation 1 Speed"]), {
-						Kích thước = csize,
-						Vị trí = pos,
+						Size = csize,
+						Position = pos,
 						AnchorPoint = apos
-					}):Chơi()
-				kết thúc
+					}):Play()
+				end
 				
-				ChangeStage( Thay đổi giai đoạn)
-				if is Default and Hàm gọi lại thì
-					Hàm gọi lại (Mặc định)
-				kết thúc
+				ChangeStage(Default)
+				if Default and Callback then
+					Callback(Default)
+				end
 				
-				hàm phốt Nút bấm()
-					Default = not default
-					ChangeStage( Thay đổi giai đoạn)
-					nếu có hàm Callback thì
+				local function ButtonClick()
+					Default = not Default
+					ChangeStage(Default)
+					if Callback then
 						pcall(Callback, Default)
-					kết thúc
-				kết thúc
+					end
+				end
 				
 				ToggleButton.MouseButton1Click:Connect(function()
     ButtonClick()
-kết thúc)
+end)
 
 				local toggleFunction = {}
-				hàm toggleFunction.SetStage(value)
-					if value ~= Default value thì
+				function toggleFunction.SetStage(value)
+					if value ~= Default then
 						ButtonClick()
-					kết thúc
-				kết thúc
+					end
+				end
 				
 				local controlData = {
-					Tên = Chức danh,
-					Phần = Phần,
-					Phần tử = ToggleFrame,
+					Name = Title,
+					Section = Section,
+					Element = ToggleFrame,
 					SectionName = Section_Name,
 					TabName = Page_Name,
-					TabButton = Tên trang
+					TabButton = PageName
 				}
 				table.insert(getgenv().AllControls, controlData)
 				
-				trả về chức năng chuyển đổi chức năng
-			kết thúc
-			phần chức năngFunction:AddButton(Cài đặt, Gọi lại)
-				Local topic = Tiêu đề cài đặt hoặc Văn bản cài đặt hoặc ""
-				local Desc = Setting.Desc hoặc Setting.Description
+				return toggleFunction
+			end
+			function sectionFunction:AddButton(Setting, Callback)
+				local Title = Setting.Title or Setting.Text or ""
+				local Desc = Setting.Desc or Setting.Description
 				local Callback = Setting.Callback or Setting.Func or function() end
 				
 				local Button = Instance.new("Frame")
@@ -1653,7 +1653,7 @@ kết thúc)
 				local RowHover_1 = Instance.new("Frame")
 				local UICorner_2 = Instance.new("UICorner")
 				local TextColor_1 = Instance.new("TextLabel")
-				local TextDesc = Instance.new("TextLabel")
+				local TextDesc = Instance.new("TextLabel") 
 				local ClickArea_1 = Instance.new("Frame")
 				local UICorner_3 = Instance.new("UICorner")
 				local UIGradient_1 = Instance.new("UIGradient")
@@ -1668,17 +1668,17 @@ kết thúc)
 				Button.BackgroundColor3 = Color3.fromRGB(163,162,165)
 				Button.BackgroundTransparency = 1
 				
-				if Desc và Desc ~= "" thì
+				if Desc and Desc ~= "" then
 					Button.AutomaticSize = Enum.AutomaticSize.Y
 					Button.Size = UDim2.new(1, 0, 0, 0)
-				khác
-					Button.Size = UDim2.new(1, 0, 0, 30)
-				kết thúc
+				else
+					Button.Size = UDim2.new(1, 0, 0, 30) 
+				end
 				
 				RowBG_1.Name = "RowBG"
 				RowBG_1.Parent = Button
 				RowBG_1.AnchorPoint = Vector2.new(0.5, 0.5)
-				RowBG_1.BackgroundColor3 = getgenv().UIColor["Màu nền 1"]
+				RowBG_1.BackgroundColor3 = getgenv().UIColor["Background 1 Color"]
 				RowBG_1.BackgroundTransparency = getgenv().UIColor["Background 1 Transparency"]
 				RowBG_1.Position = UDim2.new(0.5, 0, 0.5, 0)
 				RowBG_1.Size = UDim2.new(1, -10, 1, 0)
@@ -1701,23 +1701,23 @@ kết thúc)
 				TextColor_1.BackgroundColor3 = Color3.fromRGB(163,162,165)
 				TextColor_1.BackgroundTransparency = 1
 				
-				if Desc và Desc ~= "" thì
+				if Desc and Desc ~= "" then
 					TextColor_1.Position = UDim2.new(0, 12, 0, 5)
 					TextColor_1.Size = UDim2.new(1, -110, 0, 20)
-				khác
+				else
 					TextColor_1.Position = UDim2.new(0, 12, 0, 0)
 					TextColor_1.Size = UDim2.new(1, -110, 1, 0)
-				kết thúc
+				end
 				
 				TextColor_1.Font = Enum.Font.GothamBold
-				TextColor_1.Text = Tiêu đề
-				TextColor_1.TextColor3 = getgenv().UIColor["Màu văn bản GUI"]
+				TextColor_1.Text = Title
+				TextColor_1.TextColor3 = getgenv().UIColor["GUI Text Color"]
 				TextColor_1.TextSize = 14
 				TextColor_1.TextStrokeTransparency = 0.85
 				TextColor_1.TextXAlignment = Enum.TextXAlignment.Left
 				
-				if Desc và Desc ~= "" thì
-					TextDesc.Name = "Mô-mô"
+				if Desc and Desc ~= "" then
+					TextDesc.Name = "Description"
 					TextDesc.Parent = RowBG_1
 					TextDesc.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 					TextDesc.BackgroundTransparency = 1
@@ -1734,7 +1734,7 @@ kết thúc)
 					local pad = Instance.new("UIPadding", RowBG_1)
 					pad.PaddingTop = UDim.new(0, 5)
 					pad.PaddingBottom = UDim.new(0, 5)
-				kết thúc
+				end
 				
 				ClickArea_1.Name = "ClickArea"
 				ClickArea_1.Parent = RowBG_1
@@ -1763,7 +1763,7 @@ kết thúc)
 				ImageLabel_1.Position = UDim2.new(0.5, 0, 0.5, 0)
 				ImageLabel_1.Size = UDim2.new(1, 14, 1, 14)
 				ImageLabel_1.ZIndex = 0
-				ImageLabel_1.Image = "rbxassetid 5028857084"
+				ImageLabel_1.Image = "rbxassetid://5028857084"
 				ImageLabel_1.ImageTransparency = 0.7
 				ImageLabel_1.ScaleType = Enum.ScaleType.Slice
 				ImageLabel_1.SliceCenter = Rect.new(24, 24, 276, 276)
@@ -1789,7 +1789,7 @@ kết thúc)
 				Button_1.BackgroundTransparency = 1
 				Button_1.Size = UDim2.new(1, 0, 1, 0)
 				Button_1.Font = Enum.Font.GothamBold
-				Button_1.Text = "Nhấp chuột"
+				Button_1.Text = "Click"
 				Button_1.TextColor3 = Color3.fromRGB(40, 40, 40)
 				Button_1.TextSize = 13
 				
@@ -1806,7 +1806,7 @@ kết thúc)
 					ripple.Size = UDim2.new(0, 0, 0, 0)
 					ripple.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 					ripple.BackgroundTransparency = 0.6
-					ripple.ZInd ex = 20
+					ripple.ZIndex = 20
 					ripple.Parent = ClickArea_1
 					
 					local rippleCorner = Instance.new("UICorner")
@@ -1814,33 +1814,33 @@ kết thúc)
 					rippleCorner.Parent = ripple
 					
 					local rippleTween = TweenService:Create(ripple, TweenInfo.new(0.35, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-						Kích thước = UDim2.new(1, 0, 1, 0),
-						Độ trong suốt của nền = 1,
-						Vị trí = UDim2.new(0.5, 0, 0.5, 0)
+						Size = UDim2.new(1, 0, 1, 0),
+						BackgroundTransparency = 1,
+						Position = UDim2.new(0.5, 0, 0.5, 0)
 					})
 					rippleTween:Play()
 					rippleTween.Completed:Connect(function() ripple:Destroy() end)
 					
 					Callback()
-				kết thúc)
+				end)
 				
-				khối f = {}
+				local f = {}
 				function f:SetTitle(vl) TextColor_1.Text = vl end
 				
 				local controlData = {
-					Tên = Chức danh,
-					Phần = Phần,
-					Phần tử =,
+					Name = Title,
+					Section = Section,
+					Element = Button,
 					SectionName = Section_Name,
 					TabName = Page_Name,
-					TabButton = Tên trang
+					TabButton = PageName
 				}
 				table.insert(getgenv().AllControls, controlData)
-				trả về f
-			kết thúc
+				return f
+			end
         
-			phần chức năngFunction:AddLabel(text)
-				Local topic = text
+			function sectionFunction:AddLabel(text)
+				local Title = text
                 local LabelFrame = Instance.new("Frame")
                 local LabelBG = Instance.new("Frame")
                 local UICorner = Instance.new("UICorner")
@@ -1866,7 +1866,7 @@ kết thúc)
                 UICorner.CornerRadius = UDim.new(0,6)
                 
                 
-                Tên chữ màu = "Chữ màu"
+                TextColor.Name = "TextColor"
                 TextColor.Parent = LabelBG
                 TextColor.AutomaticSize = Enum.AutomaticSize.Y
                 TextColor.BackgroundColor3 = Color3.fromRGB(163,162,165)
@@ -1874,34 +1874,34 @@ kết thúc)
                 TextColor.Position = UDim2.new(0, 12,0, 6)
                 TextColor.Size = UDim2.new(1, -24,1, -12)
                 TextColor.Font = Enum.Font.GothamMedium
-                Chữ màu.Văn bản = Tiêu đề
+                TextColor.Text = Title
                 TextColor.TextColor3 = Color3.fromRGB(240,240,230)
-                Chữ màu.Kích thước = 14
+                TextColor.TextSize = 14
                 TextColor.TextStrokeTransparency = 0.8500000238418579
                 TextColor.TextWrapped = true
                 TextColor.TextXAlignment = Enum.TextXAlignment.Left
 				local labelFunction = {}
-				hàm labelFunction:SetText(text)
-					TextColor.Text = văn bản
-				kết thúc
-				hàm labelFunction.SetColor(color)
-					TextColor.TextColor3 = màu
-				kết thúc
+				function labelFunction:SetText(text)
+					TextColor.Text = text
+				end
+				function labelFunction.SetColor(color)
+					TextColor.TextColor3 = color
+				end
 				local controlData = {
-                    Tên = Chức danh,
-                    Phần = Phần,
-                    Phần tử = Khung nhãn,
+                    Name = Title,
+                    Section = Section,
+                    Element = LabelFrame,
                     SectionName = Section_Name,
                     TabName = Page_Name,
-                    TabButton = Tên trang
+                    TabButton = PageName
                 }
                 table.insert(getgenv().AllControls, controlData)
                 
-				trả lời về nhãn hiệu
-			kết thúc
-            phần chức năngFunction:AddDropdownSection(Setting)
+				return labelFunction
+			end
+            function sectionFunction:AddDropdownSection(Setting)
                 local Title = tostring(Setting.Text or Setting.Title or "")
-                Search local = Setting.Search hoặc false
+                local Search = Setting.Search or false
               
                 local DropdownFrame = Instance.new("Frame")
                 local Dropdownbg = Instance.new("Frame")
@@ -1944,15 +1944,15 @@ kết thúc)
                 UICorner.CornerRadius = UDim.new(0, 4)
                 UICorner.Parent = Topdrop
                 
-                Tiêu đề thả xuống local
-                Nếu tìm thì
+                local Dropdowntitle
+                if Search then
                     Dropdowntitle = Instance.new("TextBox")
-                    Dropdowntitle.PlaceholderText = Tiêu đề
-                    Dropdowntitle.PlaceholderColor3 = getgenv().UIColor["Màu chữ giữ chỗ"]
-                khác
+                    Dropdowntitle.PlaceholderText = Title
+                    Dropdowntitle.PlaceholderColor3 = getgenv().UIColor["Placeholder Text Color"]
+                else
                     Dropdowntitle = Instance.new("TextLabel")
-                    Tiêu đề thả xuống.Văn bản = Tiêu đề
-                kết thúc
+                    Dropdowntitle.Text = Title
+                end
                 
                 Dropdowntitle.Name = "TextColorPlaceholder"
                 Dropdowntitle.Parent = Topdrop
@@ -1961,10 +1961,10 @@ kết thúc)
                 Dropdowntitle.Position = UDim2.new(0, 10, 0, 0)
                 Dropdowntitle.Size = UDim2.new(1, -40, 1, 0)
                 Dropdowntitle.Font = Enum.Font.GothamBlack
-                Di chuyển văn bản kích thước của tiêu đề xuống = 14.000
+                Dropdowntitle.TextSize = 14.000
                 Dropdowntitle.TextXAlignment = Enum.TextXAlignment.Left
                 Dropdowntitle.ClipsDescendants = true
-                Dropdowntitle.TextColor3 = getgenv().UIColor["Màu văn bản"]
+                Dropdowntitle.TextColor3 = getgenv().UIColor["Text Color"]
                 
                 ImgDrop.Name = "ImgDrop"
                 ImgDrop.Parent = Topdrop
@@ -1973,8 +1973,8 @@ kết thúc)
                 ImgDrop.BorderColor3 = Color3.fromRGB(27, 42, 53)
                 ImgDrop.Position = UDim2.new(1, -6, 0.5, 0)
                 ImgDrop.Size = UDim2.new(0, 15, 0, 15)
-                ImgDrop.Image = "rbxassetid6954383209"
-                ImgDrop.ImageColor3 = getgenv().UIColor["Màu sắc menu biểu tượng thả xuống"]
+                ImgDrop.Image = "rbxassetid://6954383209"
+                ImgDrop.ImageColor3 = getgenv().UIColor["Dropdown Icon Color"]
                 
                 DropdownButton.Name = "DropdownButton"
                 DropdownButton.Parent = Topdrop
@@ -2038,41 +2038,41 @@ kết thúc)
                 local isOpen = false
                 
                 DropdownButton.MouseButton1Click:Connect(function()
-                    isOpen = không phải isOpen
+                    isOpen = not isOpen
                     
                     local listsize = isOpen and UDim2.new(1, 0, 0, 200) or UDim2.new(1, 0, 0, 0)
                     local mainsize = isOpen and UDim2.new(1, 0, 0, 230) or UDim2.new(1, 0, 0, 25)
                     local DropCRotation = isOpen and 90 or 0
                     
                     TweenService:Create(Dropdownlisttt, TweenInfo.new(getgenv().UIColor["Tween Animation 2 Speed"]), {
-                        Size = list size
-                    }):Chơi()
+                        Size = listsize
+                    }):Play()
                     TweenService:Create(DropdownFrame, TweenInfo.new(getgenv().UIColor["Tween Animation 2 Speed"]), {
-                        Kích thước = kích thước chính
-                    }):Chơi()
+                        Size = mainsize
+                    }):Play()
                     TweenService:Create(ImgDrop, TweenInfo.new(getgenv().UIColor["Tween Animation 2 Speed"]), {
-                        Xoay = DropCRotation
-                    }):Chơi()
-                kết thúc)
+                        Rotation = DropCRotation
+                    }):Play()
+                end)
                 
                 ScrollContainerList:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
                     DropdownScroll.CanvasSize = UDim2.new(0, 0, 0, 10 + ScrollContainerList.AbsoluteContentSize.Y + 5)
-                kết thúc)
+                end)
                 
                 InternalList:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
                     local contentHeight = math.min(InternalList.AbsoluteContentSize.Y + 10, 300)
                     local listsize = isOpen and UDim2.new(1, 0, 0, contentHeight) or UDim2.new(1, 0, 0, 0)
                     local mainsize = isOpen and UDim2.new(1, 0, 0, contentHeight + 25) or UDim2.new(1, 0, 0, 25)
                     
-                    nếu isOpen thì
+                    if isOpen then
                         TweenService:Create(Dropdownlisttt, TweenInfo.new(getgenv().UIColor["Tween Animation 2 Speed"]), {
-                            Size = list size
-                        }):Chơi()
+                            Size = listsize
+                        }):Play()
                         TweenService:Create(DropdownFrame, TweenInfo.new(getgenv().UIColor["Tween Animation 2 Speed"]), {
-                            Kích thước = kích thước chính
-                        }):Chơi()
-                    kết thúc
-                kết thúc)
+                            Size = mainsize
+                        }):Play()
+                    end
+                end)
                 
                local dropdownSectionFunction = {}
                 
@@ -2080,10 +2080,10 @@ kết thúc)
                     local TitleText = tostring(Setting.Text or Setting.Title) or ""
                     local minValue = tonumber(Setting.Min) or 0
                     local maxValue = tonumber(Setting.Max) or 100
-                    local Precise = Setting.Precise hoặc false
+                    local Precise = Setting.Precise or false
                     local DefaultValue = tonumber(Setting.Default) or 0
                     local Callback = Setting.Callback
-                    Làm tròn cục bộ = Setting.Rounding hoặc Setting.Rounding
+                    local Rounding = Setting.Rouding or Setting.Rounding
                     
                     local SliderFrame = Instance.new("Frame")
                     local SliderCorner = Instance.new("UICorner")
@@ -2103,7 +2103,7 @@ kết thúc)
                     SliderFrame.Parent = InternalSection
                     SliderFrame.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
                     SliderFrame.BackgroundTransparency = 1.000
-                    SliderFrame.Size = UDim2.new(1, 0, 0, 50)
+                    SliderFrame.Size = UDim2.new(1, 0, 0, 50) 
                     
                     SliderCorner.CornerRadius = UDim.new(0, 4)
                     SliderCorner.Name = "SliderCorner"
@@ -2113,7 +2113,7 @@ kết thúc)
                     SliderBG.Parent = SliderFrame
                     SliderBG.AnchorPoint = Vector2.new(0.5, 0.5)
                     SliderBG.Position = UDim2.new(0.5, 0, 0.5, 0)
-                    SliderBG.Size = UDim2.new(1, -5, 1, 0)
+                    SliderBG.Size = UDim2.new(1, -5, 1, 0) 
                     SliderBG.BackgroundColor3 = Color3.fromRGB(28, 28, 34)
                     SliderBG.BackgroundTransparency = 0.25
                     
@@ -2126,19 +2126,19 @@ kết thúc)
                     SliderTitle.BackgroundColor3 = Color3.fromRGB(230, 230, 230)
                     SliderTitle.BackgroundTransparency = 1.000
                     SliderTitle.Position = UDim2.new(0, 10, 0, 0)
-                    SliderTitle.Size = UDim2.new(0.65, -10, 0, 25)
+                    SliderTitle.Size = UDim2.new(0.65, -10, 0, 25) 
                     SliderTitle.Font = Enum.Font.GothamBlack
                     SliderTitle.Text = TitleText
                     SliderTitle.TextSize = 14.000
                     SliderTitle.RichText = true
                     SliderTitle.TextXAlignment = Enum.TextXAlignment.Left
-                    SliderTitle.TextColor3 = getgenv().UIColor["Màu văn bản"]
+                    SliderTitle.TextColor3 = getgenv().UIColor["Text Color"]
                     
                     SliderBar.Name = "SliderBar"
                     SliderBar.Parent = SliderFrame
                     SliderBar.AnchorPoint = Vector2.new(0.5, 0.5)
                     SliderBar.Position = UDim2.new(0.5, 0, 0.5, 14)
-                    SliderBar.Size = UDim2.new(0.9, 0, 0, 6)
+                    SliderBar.Size = UDim2.new(0.9, 0, 0, 6) 
                     SliderBar.BackgroundColor3 = getgenv().UIColor["Background 2 Color"]
                     
                     SliderButton.Name = "SliderButton"
@@ -2169,7 +2169,7 @@ kết thúc)
                     Sliderboxframe.Parent = SliderFrame
                     Sliderboxframe.AnchorPoint = Vector2.new(1, 0)
                     Sliderboxframe.Position = UDim2.new(1, -10, 0, 5)
-                    Sliderboxframe.Size = UDim2.new(0.25, 0, 0, 25)
+                    Sliderboxframe.Size = UDim2.new(0.25, 0, 0, 25) 
                     Sliderboxframe.BackgroundColor3 = getgenv().UIColor["Background 2 Color"]
                     
                     Sliderbox.CornerRadius = UDim.new(0, 4)
@@ -2184,176 +2184,176 @@ kết thúc)
                     Sliderbox_2.Font = Enum.Font.GothamBold
                     Sliderbox_2.Text = ""
                     Sliderbox_2.TextSize = 14.000
-                    Sliderbox_2.TextColor3 = getgenv().UIColor["Màu văn bản"]
+                    Sliderbox_2.TextColor3 = getgenv().UIColor["Text Color"]
                     
                     SliderButton.MouseEnter:Connect(function()
                         TweenService:Create(Bar, TweenInfo.new(getgenv().UIColor["Tween Animation 2 Speed"]), {
                             BackgroundColor3 = getgenv().UIColor["Slider Highlight Color"]
-                        }):Chơi()
-                    kết thúc)
+                        }):Play()
+                    end)
                     
                     SliderButton.MouseLeave:Connect(function()
                         TweenService:Create(Bar, TweenInfo.new(getgenv().UIColor["Tween Animation 2 Speed"]), {
                             BackgroundColor3 = getgenv().UIColor["Slider Line Color"]
-                        }):Chơi()
-                    kết thúc)
+                        }):Play()
+                    end)
                     
                     local callBackAndSetText = function(val)
                         Sliderbox_2.Text = tostring(val)
                         Callback(tonumber(val))
-                    kết thúc
-                    nếu DefaultValue thì
-                        nếu DefaultValue <= minValue thì
-                            Default value = Giá trị tối thiểu
-                        Ngược lại, nếu DefaultValue >= maxValue thì
-                            Default value = Maximum value
-                        kết thúc
+                    end
+                    if DefaultValue then
+                        if DefaultValue <= minValue then
+                            DefaultValue = minValue
+                        elseif DefaultValue >= maxValue then
+                            DefaultValue = maxValue
+                        end
                         Bar.Size = UDim2.new(1 - ((maxValue - DefaultValue) / (maxValue - minValue)), 0, 0, 6)
                         Sliderbox_2.Text = tostring(DefaultValue)
-                    kết thúc
+                    end
                     
                     
-                    kéo cục bộ = sai
-                    đầu vào kéo cục bộ
+                    local dragging = false
+                    local dragInput
                     local holdTime = 0
                     local holdStarted = 0
                     
-                    hàm local onInputBegan(input)
-                        nếu input.UserInputType == Enum.UserInputType.MouseButton1 hoặc input.UserInputType == Enum.UserInputType.Touch thì
+                    local function onInputBegan(input)
+                        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
                             holdStarted = tick()
                             
                             input.Changed:Connect(function()
                                 if input.UserInputState == Enum.UserInputState.End then
-                                    kéo lê = sai
+                                    dragging = false
                                     holdStarted = 0
-                                kết thúc
-                            kết thúc)
-                        kết thúc
-                    kết thúc
+                                end
+                            end)
+                        end
+                    end
                     
-                    hàm local onInputEnded(input)
-                        nếu input.UserInputType == Enum.UserInputType.MouseButton1 hoặc input.UserInputType == Enum.UserInputType.Touch thì
-                            kéo lê = sai
+                    local function onInputEnded(input)
+                        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+                            dragging = false
                             holdStarted = 0
-                        kết thúc
-                    kết thúc
+                        end
+                    end
                     
-                    hàm local onInputChanged(input)
-                        nếu input.UserInputType == Enum.UserInputType.MouseMovement hoặc input.UserInputType == Enum.UserInputType.Touch thì
+                    local function onInputChanged(input)
+                        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
                             dragInput = input
-                        kết thúc
-                    kết thúc
+                        end
+                    end
                     
                     SliderButton.InputBegan:Connect(onInputBegan)
                     SliderButton.InputEnded:Connect(onInputEnded)
                     SliderButton.InputChanged:Connect(onInputChanged)
                     
                     RunService.RenderStepped:Connect(function()
-                        if holdStarted > 0 và (tick() - holdStarted >= holdTime) và không kéo dài thì
-                            kéo = đúng
-                        kết thúc
+                        if holdStarted > 0 and (tick() - holdStarted >= holdTime) and not dragging then
+                            dragging = true
+                        end
                         
-                        if pull and pull to the thì
+                        if dragging and dragInput then
                             local barWidth = math.clamp(dragInput.Position.X - Bar.AbsolutePosition.X, 0, SliderBar.AbsoluteSize.X)
-                            Tỷ lệ phần trăm cục bộ = thanh trượt chiều rộng / kích thước tuyệt đối của thanh trượt.X
-                            Giá trị cục bộ = Giá trị nhỏ nhất + (Giá trị lớn nhất - Giá trị nhỏ nhất) * phần trăm
+                            local percentage = barWidth / SliderBar.AbsoluteSize.X
+                            local value = minValue + (maxValue - minValue) * percentage
                             
-                            Nếu làm vòng tròn thì
-                                giá trị = tonumber(string.format("%.".. Làm tròn .."f", giá trị))
-                            nếu không chính xác thì
-                                giá trị = math.floor(giá trị)
-                            kết thúc
+                            if Rounding then
+                                value = tonumber(string.format("%.".. Rounding .."f", value))
+                            elseif not Precise then
+                                value = math.floor(value)
+                            end
                             
-                            giá trị = math.clamp(giá trị, giá trị tối thiểu, giá trị tối đa)
+                            value = math.clamp(value, minValue, maxValue)
                             
                             pcall(function()
                                 callBackAndSetText(value)
-                            kết thúc)
+                            end)
                             Bar.Size = UDim2.new(percentage, 0, 1, 0)
-                        kết thúc
-                    kết thúc)
+                        end
+                    end)
                     
-                    hàm local GetSliderValue(Value)
-                        Giá trị = tonumber(Giá trị) hoặc minValue
-                        Giá trị = math.clamp(Giá trị, Giá trị tối thiểu, Giá trị tối đa)
+                    local function GetSliderValue(Value)
+                        Value = tonumber(Value) or minValue
+                        Value = math.clamp(Value, minValue, maxValue)
                         
-                        Nếu làm vòng tròn thì
-                            Giá trị = tonumber(string.format("%.".. Làm tròn .."f", Giá trị))
-                        nếu không chính xác thì
-                            Giá trị = math.floor(Giá trị)
-                        kết thúc
+                        if Rounding then
+                            Value = tonumber(string.format("%.".. Rounding .."f", Value))
+                        elseif not Precise then
+                            Value = math.floor(Value)
+                        end
                         
-                        Tỷ lệ phần trăm cục bộ = (Giá trị - Giá trị tối thiểu) / (Giá trị tối đa tối đa - Giá trị tối thiểu)
+                        local percentage = (Value - minValue) / (maxValue - minValue)
                         Bar.Size = UDim2.new(percentage, 0, 1, 0)
                         callBackAndSetText(Value)
-                    kết thúc
+                    end
                     
                     Sliderbox_2.FocusLost:Connect(function()
                         GetSliderValue(Sliderbox_2.Text)
-                    kết thúc)
+                    end)
                     
                     local slider_function = {}
-                    hàm slider_function.SetValue(Value)
+                    function slider_function.SetValue(Value)
                         GetSliderValue(Value)
-                    kết thúc
+                    end
                     
-                    hàm slider_function.GetValue()
-                        trả về số(Sliderbox_2.Text) hoặc giá trị tối thiểu
-                    kết thúc
+                    function slider_function.GetValue()
+                        return tonumber(Sliderbox_2.Text) or minValue
+                    end
                     
-                    trả về hàm
-                kết thúc
+                    return slider_function
+                end
                 
-                hàm dropdownSectionFunction:SetOpen(state)
-                    if status ~= isOpen thì
+                function dropdownSectionFunction:SetOpen(state)
+                    if state ~= isOpen then
                         DropdownButton.MouseButton1Click:Fire()
-                    kết thúc
-                kết thúc
+                    end
+                end
                 
-                hàm dropdownSectionFunction:GetOpen()
-                    trả lời về isOpen
-                kết thúc
+                function dropdownSectionFunction:GetOpen()
+                    return isOpen
+                end
                 
-                hàm dropdownSectionFunction:SetTitle(newTitle)
-                    Nếu tìm thì
+                function dropdownSectionFunction:SetTitle(newTitle)
+                    if Search then
                         Dropdowntitle.PlaceholderText = newTitle
-                    khác
+                    else
                         Dropdowntitle.Text = newTitle
-                    kết thúc
-                kết thúc
+                    end
+                end
                 
                 local controlData = {
-                    Tên = Chức danh,
-                    Phần = Phần,
-                    Phần tử = Khung thả xuống,
+                    Name = Title,
+                    Section = Section,
+                    Element = DropdownFrame,
                     SectionName = Section_Name,
                     TabName = Page_Name,
-                    TabButton = Tên trang
+                    TabButton = PageName
                 }
                 table.insert(getgenv().AllControls, controlData)
                 
                 return dropdownSectionFunction
-            kết thúc
+            end
             
-						phần chức năngFunction:AddDropdown(idk, Setting)
+						function sectionFunction:AddDropdown(idk, Setting)
 				local Title = tostring(Setting.Text or Setting.Title) or ""
 				local List = Setting.Values
-				Search local = Setting.Search hoặc false
-				local Selected = Setting.Selected hoặc Setting.Multi hoặc false
+				local Search = Setting.Search or false
+				local Selected = Setting.Selected or Setting.Multi or false
 				local Slider = Setting.Slider or false
 				local SliderRelease = Setting.SliderRelease or false
 				local Default = (function ()
-                    nếu Cài đặt.Mặc định thì
-                        if type(Setting.Default) == "number" thì
+                    if Setting.Default then
+                        if type(Setting.Default) == "number" then
                             return List[Setting.Default]
                         elseif type(Setting.Default) == "string" then
-                            Trả lời về Cài đặt mặc định
-                        kết thúc
-                    kết thúc
-                    trả về nil
-                kết thúc)()
+                            return Setting.Default
+                        end
+                    end
+                    return nil
+                end)()
 				local Callback = Setting.Callback
-				các local cặp = Setting.SortPairs hoặc cặp
+				local pairs = Setting.SortPairs or pairs
 				local DropdownFrame = Instance.new("Frame")
 				local Dropdownbg = Instance.new("Frame")
 				local Dropdowncorner = Instance.new("UICorner")
@@ -2366,12 +2366,12 @@ kết thúc)
 				local ScrollContainer = Instance.new("Frame")
 				local ScrollContainerList = Instance.new("UIListLayout")
 				local dropdownLeave = false
-				Tiêu đề thả xuống local;
-				Nếu tìm thì
+				local Dropdowntitle;
+				if Search then
 					Dropdowntitle = Instance.new("TextBox")
-				khác
+				else
 					Dropdowntitle = Instance.new("TextLabel")
-				kết thúc
+				end
 				DropdownFrame.Name = Title .. "DropdownFrame"
 				DropdownFrame.Parent = Section
 				DropdownFrame.BackgroundColor3 = Color3.fromRGB(230, 230, 230)
@@ -2403,41 +2403,41 @@ kết thúc)
 				Dropdowntitle.Position = UDim2.new(0, 10, 0, 0)
 				Dropdowntitle.Size = UDim2.new(1, -40, 1, 0)
 				Dropdowntitle.Font = Enum.Font.GothamBlack
-				Tiêu đề thả xuống.Văn bản = ''
-				Di chuyển văn bản kích thước của tiêu đề xuống = 14.000
+				Dropdowntitle.Text = ''
+				Dropdowntitle.TextSize = 14.000
 				Dropdowntitle.TextXAlignment = Enum.TextXAlignment.Left
 				Dropdowntitle.ClipsDescendants = true
 				local Sel = Instance.new("StringValue", Dropdowntitle)
 				Sel.Value = ""
-				if Default và table.find(List, Default) thì
-					Lựa chọn giá trị = Default
-				kết thúc
-				nếu không được chọn thì
-					Nếu tìm thì
-						Dropdowntitle.PlaceholderColor3 = getgenv().UIColor["Màu chữ giữ chỗ"]
-						Dropdowntitle.PlaceholderText = "Tiêu đề .. ': ' .. tostring(Mặc định hoặc "")
-					khác
-						Dropdowntitle.Text = "Tiêu đề .. ': ' .. tostring(Mặc định hoặc "")
-					kết thúc
-					if is Default and Hàm gọi lại thì
+				if Default and table.find(List, Default) then
+					Sel.Value = Default
+				end
+				if not Selected then
+					if Search then
+						Dropdowntitle.PlaceholderColor3 = getgenv().UIColor["Placeholder Text Color"]
+						Dropdowntitle.PlaceholderText = Title .. ': ' .. tostring(Default or "")
+					else
+						Dropdowntitle.Text = Title .. ': ' .. tostring(Default or "")
+					end
+					if Default and Callback then
 						task.spawn(function()
 							pcall(Callback, Default)
-						kết thúc)
-					kết thúc
-				khác
-					Nếu tìm thì
-						Dropdowntitle.PlaceholderColor3 = getgenv().UIColor["Màu chữ giữ chỗ"]
-						Dropdowntitle.PlaceholderText = "Tiêu đề .. ': ' .. tostring(Mặc định hoặc "")
-					khác
-						Dropdowntitle.Text = "Tiêu đề .. ': ' .. tostring(Mặc định hoặc "")
-					kết thúc
-					if is Default and Hàm gọi lại thì
+						end)
+					end
+				else
+					if Search then
+						Dropdowntitle.PlaceholderColor3 = getgenv().UIColor["Placeholder Text Color"]
+						Dropdowntitle.PlaceholderText = Title .. ': ' .. tostring(Default or "")
+					else
+						Dropdowntitle.Text = Title .. ': ' .. tostring(Default or "")
+					end
+					if Default and Callback then
 						task.spawn(function()
 							pcall(Callback, Default)
-						kết thúc)
-					kết thúc
-				kết thúc
-				Dropdowntitle.TextColor3 = getgenv().UIColor["Màu văn bản"]
+						end)
+					end
+				end
+				Dropdowntitle.TextColor3 = getgenv().UIColor["Text Color"]
 				ImgDrop.Name = "ImgDrop"
 				ImgDrop.Parent = Topdrop
 				ImgDrop.AnchorPoint = Vector2.new(1, 0.5)
@@ -2445,8 +2445,8 @@ kết thúc)
 				ImgDrop.BorderColor3 = Color3.fromRGB(27, 42, 53)
 				ImgDrop.Position = UDim2.new(1, -6, 0.5, 0)
 				ImgDrop.Size = UDim2.new(0, 15, 0, 15)
-				ImgDrop.Image = "rbxassetid6954383209"
-				ImgDrop.ImageColor3 = getgenv().UIColor["Màu sắc menu biểu tượng thả xuống"]
+				ImgDrop.Image = "rbxassetid://6954383209"
+				ImgDrop.ImageColor3 = getgenv().UIColor["Dropdown Icon Color"]
 				DropdownButton.Name = "DropdownButton"
 				DropdownButton.Parent = Topdrop
 				DropdownButton.BackgroundColor3 = Color3.fromRGB(230, 230, 230)
@@ -2489,73 +2489,73 @@ kết thúc)
 				ScrollContainerList.Padding = UDim.new(0, 5)
 				ScrollContainerList:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
 					DropdownScroll.CanvasSize = UDim2.new(0, 0, 0, 10 + ScrollContainerList.AbsoluteContentSize.Y + 5)
-				kết thúc)
+				end)
 				local isbusy = false
-				local được tìm thấy = {}
-				local search table = {}
-				hàm phố chỉnh sửa()
+				local found = {}
+				local searchtable = {}
+				local function edit()
 					for i in pairs(found) do
 						found[i] = nil
-					kết thúc
+					end
 					for h, l in pairs(ScrollContainer:GetChildren()) do
-						if l:IsA("UIListLayout") và không phải l:IsA("UIPadding") và không phải l:IsA('UIGridLayout') thì
+						if not l:IsA("UIListLayout") and not l:IsA("UIPadding") and not l:IsA('UIGridLayout') then
 							l.Visible = false
-						kết thúc
-					kết thúc
+						end
+					end
 					Dropdowntitle.Text = string.lower(Dropdowntitle.Text)
-				kết thúc
-				hàm local SearchDropdown()
-					Kết quả cục bộ = {}
+				end
+				local function SearchDropdown()
+					local Results = {}
 					for i, v in pairs(searchtable) do
 						if string.find(v, Dropdowntitle.Text) then
 							table.insert(found, v)
-						kết thúc
-					kết thúc
-					for a, b in pa irs(ScrollContainer:GetChildren()) do
-						cho c, d theo cặp (đã tìm thấy) làm
-							nếu d == b.Name thì
+						end
+					end
+					for a, b in pairs(ScrollContainer:GetChildren()) do
+						for c, d in pairs(found) do
+							if d == b.Name then
 								b.Visible = true
-							kết thúc
-						kết thúc
-					kết thúc
-				kết thúc
-				hàm local clear_object_in_list()
+							end
+						end
+					end
+				end
+				local function clear_object_in_list()
 					for i, v in next, ScrollContainer:GetChildren() do
-						nếu v:IsA('Frame') thì
+						if v:IsA('Frame') then
 							v:Destroy()
-						kết thúc
-					kết thúc
-				kết thúc
-				Danh sách cục bộ mới
-                localOrderedList = {}
-                nếu được chọn thì
+						end
+					end
+				end
+				local ListNew
+                local OrderedList = {}
+                if Selected then
                     ListNew = {}
                     for _, value in ipairs(List) do
                         ListNew[value] = (value == Default)
                         table.insert(OrderedList, value)
-                    kết thúc
-                    if is Default and Hàm gọi lại thì
+                    end
+                    if Default and Callback then
                         task.spawn(function() Callback(Default, true) end)
-                    kết thúc
-                khác
+                    end
+                else
                     ListNew = List
-                kết thúc
-				chức năng danh sách làm mới bộ cục bộ(SortPairs)
-					đôi = SortPairs hoặc cặp
+                end
+				local function refreshlist(SortPairs)
+					pairs = SortPairs or pairs
 					clear_object_in_list()
-					bảng tìm kiếm = {}
+					searchtable = {}
 					for i, v in pairs(ListNew) do
-						nếu được chọn thì
+						if Selected then
 							table.insert(searchtable, string.lower(i))
-						nếu Slider thì
+						elseif Slider then
 							table.insert(searchtable, string.lower(v['Title']))
-						khác
+						else
 							table.insert(searchtable, string.lower(v))
-						kết thúc
-					kết thúc
-					nếu được chọn thì
-                        đối với _, tôi trong ipairs(OrderedList) làm
-                            khối bộ v = ListNew[i]
+						end
+					end
+					if Selected then
+                        for _, i in ipairs(OrderedList) do
+                            local v = ListNew[i]
 							local SampleItem = Instance.new("Frame")
 							local SampleItemCorner = Instance.new("UICorner")
 							local SampleItemBG = Instance.new("Frame")
@@ -2578,7 +2578,7 @@ kết thúc)
 							SampleItemBG.Parent = SampleItem
 							SampleItemBG.AnchorPoint = Vector2.new(0.5, 0.5)
 							SampleItemBG.BackgroundColor3 = v and UIColor["Dropdown Selected Check Color"] or Color3.fromRGB(255, 255, 255)
-							SampleItemBG.BackgroundTransparency = v và 0,5 hoặc 1
+							SampleItemBG.BackgroundTransparency = v and .5 or 1
 							SampleItemBG.BorderColor3 = Color3.fromRGB(27, 42, 53)
 							SampleItemBG.Position = UDim2.new(0.5, 0, 0.5, 0)
 							SampleItemBG.Size = UDim2.new(1, 0, 1, 0)
@@ -2596,7 +2596,7 @@ kết thúc)
 							SampleItemTitle.Text = tostring(i)
 							SampleItemTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
 							SampleItemTitle.TextSize = 14.000
-							SampleItemTitle.TextStrokeTransparency = 0,500
+							SampleItemTitle.TextStrokeTransparency = 0.500
 							SampleItemTitle.TextXAlignment = Enum.TextXAlignment.Left
 							SampleItemCheck.Name = "SampleItemCheck"
 							SampleItemCheck.Parent = SampleItemBG
@@ -2605,11 +2605,11 @@ kết thúc)
 							SampleItemCheck.Position = UDim2.new(1, 0, 0.5, 0)
 							SampleItemCheck.Size = UDim2.new(0, 25, 0, 25)
 							SampleItemCheck.ZIndex = 2
-							SampleItemCheck.Image = "rbxassetid3926305904"
-							SampleItemCheck.ImageColor3 = UIColor["Màu ô chọn trong menu thả xuống"]
+							SampleItemCheck.Image = "rbxassetid://3926305904"
+							SampleItemCheck.ImageColor3 = UIColor["Dropdown Selected Check Color"]
 							SampleItemCheck.ImageRectOffset = Vector2.new(312, 4)
 							SampleItemCheck.ImageRectSize = Vector2.new(24, 24)
-							SampleItemCheck.ImageTransparency = v và 0 hoặc 1
+							SampleItemCheck.ImageTransparency = v and 0 or 1
 							SampleItemButton.Name = "SampleItemButton"
 							SampleItemButton.Parent = SampleItem
 							SampleItemButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -2618,75 +2618,75 @@ kết thúc)
 							SampleItemButton.BorderSizePixel = 0
 							SampleItemButton.Size = UDim2.new(1, 0, 1, 0)
 							SampleItemButton.Font = Enum.Font.SourceSans
-							SampleItemButton.TextColor3 = getgenv().UIColor["Màu chữ"]
+							SampleItemButton.TextColor3 = getgenv().UIColor["Text Color"]
 							SampleItemButton.TextSize = 14.000
 							SampleItemButton.TextTransparency = 1.000
 							SampleItemButton.MouseEnter:Connect(function()
-								nếu v thì
-									trở lại
-								kết thúc
+								if v then
+									return
+								end
 								TweenService:Create(
 											SampleItemBG,
 											TweenInfo.new(getgenv().UIColor["Tween Animation 1 Speed"]), {
 									BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 								}
-										):Chơi()
+										):Play()
 								TweenService:Create(
 											SampleItemBG,
 											TweenInfo.new(getgenv().UIColor["Tween Animation 1 Speed"]), {
-									Độ trong suốt của nền = 0,7
+									BackgroundTransparency = .7
 								}
-										):Chơi()
-							kết thúc)
+										):Play()
+							end)
 							SampleItemButton.MouseLeave:Connect(function()
-								nếu v thì
-									trở lại
-								kết thúc
+								if v then
+									return
+								end
 								TweenService:Create(
 											SampleItemBG,
 											TweenInfo.new(getgenv().UIColor["Tween Animation 1 Speed"]), {
 									BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 								}
-										):Chơi()
+										):Play()
 								TweenService:Create(
 											SampleItemBG,
 											TweenInfo.new(getgenv().UIColor["Tween Animation 1 Speed"]), {
-									Độ trong suốt của nền = 1
+									BackgroundTransparency = 1
 								}
-										):Chơi()
-							kết thúc)
+										):Play()
+							end)
 							SampleItemButton.MouseButton1Click:Connect(function()
-								v = không phải v
+								v = not v
 								TweenService:Create(
-											Kiểm tra sản phẩm mẫu,
+											SampleItemCheck,
 											TweenInfo.new(getgenv().UIColor["Tween Animation 1 Speed"]), {
-									ImageTransparency = v và 0 hoặc 1
+									ImageTransparency = v and 0 or 1
 								}
-										):Chơi()
-								TweenService:Create(
-											SampleItemBG,
-											TweenInfo.new(getgenv().UIColor["Tween Animation 1 Speed"]), {
-									BackgroundColor3 = v và UIColor["Màu ô chọn trong menu thả xuống"] hoặc Color3.fromRGB(255, 255, 255)
-								}
-										):Chơi()
+										):Play()
 								TweenService:Create(
 											SampleItemBG,
 											TweenInfo.new(getgenv().UIColor["Tween Animation 1 Speed"]), {
-									BackgroundTransparency = v và 0.5 hoặc 1
+									BackgroundColor3 = v and UIColor["Dropdown Selected Check Color"] or Color3.fromRGB(255, 255, 255)
 								}
-										):Chơi()
-								nếu có hàm Callback thì
+										):Play()
+								TweenService:Create(
+											SampleItemBG,
+											TweenInfo.new(getgenv().UIColor["Tween Animation 1 Speed"]), {
+									BackgroundTransparency = v and .5 or 1
+								}
+										):Play()
+								if Callback then
 									Callback(i, v)
 									ListNew[i] = v
-								kết thúc
-								Nếu tìm thì
-									Dropdowntitle.PlaceholderText = Tiêu đề .. ': '
-								khác
-									Dropdowntitle.Text = Tiêu đề .. ': '
-								kết thúc
-							kết thúc)
-						kết thúc
-					nếu Slider thì
+								end
+								if Search then
+									Dropdowntitle.PlaceholderText = Title .. ': '
+								else
+									Dropdowntitle.Text = Title .. ': '
+								end
+							end)
+						end
+					elseif Slider then
 						for i, v in pairs(ListNew) do
 							local TitleText = tostring(v.Title) or ""
 							local minValue = tonumber(v.Min) or 0
@@ -2736,14 +2736,14 @@ kết thúc)
 							SliderTitle.Text = TitleText
 							SliderTitle.TextSize = 14.000
 							SliderTitle.TextXAlignment = Enum.TextXAlignment.Left
-							SliderTitle.TextColor3 = getgenv().UIColor["Màu văn bản"]
+							SliderTitle.TextColor3 = getgenv().UIColor["Text Color"]
 							SliderBar.Name = "SliderBar"
 							SliderBar.Parent = SliderFrame
 							SliderBar.AnchorPoint = Vector2.new(.5, 0.5)
 							SliderBar.Position = UDim2.new(.5, 0, 0.5, 14)
 							SliderBar.Size = UDim2.new(1, -20, 0, 6)
 							SliderBar.BackgroundColor3 = getgenv().UIColor["Background 2 Color"]
-							SliderButton.Name = "SliderButton"
+							SliderButton.Name = "SliderButton "
 							SliderButton.Parent = SliderBar
 							SliderButton.BackgroundColor3 = Color3.fromRGB(230, 230, 230)
 							SliderButton.BackgroundTransparency = 1.000
@@ -2780,147 +2780,147 @@ kết thúc)
 							Sliderbox_2.Font = Enum.Font.GothamBold
 							Sliderbox_2.Text = ""
 							Sliderbox_2.TextSize = 14.000
-							Sliderbox_2.TextColor3 = getgenv().UIColor["Màu văn bản"]
+							Sliderbox_2.TextColor3 = getgenv().UIColor["Text Color"]
 							SliderButton.MouseEnter:Connect(function()
 								TweenService:Create(Bar, TweenInfo.new(getgenv().UIColor["Tween Animation 2 Speed"]), {
 									BackgroundColor3 = getgenv().UIColor["Slider Highlight Color"]
-								}):Chơi()
-							kết thúc)
+								}):Play()
+							end)
 							SliderButton.MouseLeave:Connect(function()
 								TweenService:Create(Bar, TweenInfo.new(getgenv().UIColor["Tween Animation 2 Speed"]), {
 									BackgroundColor3 = getgenv().UIColor["Slider Line Color"]
-								}):Chơi()
-							kết thúc)
+								}):Play()
+							end)
 							local callBackAndSetText = function(val)
 								Sliderbox_2.Text = val
 								ListNew[i].Default = val
 								Callback(i, v)
-							kết thúc
-							nếu DefaultValue thì
-								nếu DefaultValue <= minValue thì
-									Default value = Giá trị tối thiểu
-								Ngược lại, nếu DefaultValue >= maxValue thì
-									Default value = Maximum value
-								kết thúc
+							end
+							if DefaultValue then
+								if DefaultValue <= minValue then
+									DefaultValue = minValue
+								elseif DefaultValue >= maxValue then
+									DefaultValue = maxValue
+								end
 								Bar.Size = UDim2.new(1 - ((maxValue - DefaultValue) / (maxValue - minValue)), 0, 0, 6)
 								callBackAndSetText(DefaultValue)
-							kết thúc
-							nếu SliderRelease thì
-								kéo cục bộ = sai
-								đầu vào kéo cục bộ
+							end
+							if SliderRelease then
+								local dragging = false
+								local dragInput
 								local holdTime = 0
 								local holdStarted = 0
 
-								hàm local onInputBegan(input)
-									nếu input.UserInputType == Enum.UserInputType.MouseButton1 hoặc input.UserInputType == Enum.UserInputType.Touch thì
+								local function onInputBegan(input)
+									if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
 										holdStarted = tick()
 										
 										input.Changed:Connect(function()
 											if input.UserInputState == Enum.UserInputState.End then
-												kéo lê = sai
-												holdStarted = 0
-											kết thúc
-										kết thúc)
-									kết thúc
-								kết thúc
+												dragging = false
+												holdStarted = 0 
+											end
+										end)
+									end
+								end
 										
-								hàm local onInputEnded(input)
-									nếu input.UserInputType == Enum.UserInputType.MouseButton1 hoặc input.UserInputType == Enum.UserInputType.Touch thì
-										kéo lê = sai
-										holdStarted = 0
-									kết thúc
-								kết thúc
+								local function onInputEnded(input)
+									if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+										dragging = false
+										holdStarted = 0 
+									end
+								end
 
-								hàm local onInputChanged(input)
-									nếu input.UserInputType == Enum.UserInputType.MouseMovement hoặc input.UserInputType == Enum.UserInputType.Touch thì
+								local function onInputChanged(input)
+									if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
 										dragInput = input
-									kết thúc
-								kết thúc
+									end
+								end
 										
 								SliderButton.InputBegan:Connect(onInputBegan)
 								SliderButton.InputEnded:Connect(onInputEnded)
 								SliderButton.InputChanged:Connect(onInputChanged)
 										
 								RunService.RenderStepped:Connect(function()
-									if holdStarted > 0 và (tick() - holdStarted >= holdTime) và không kéo dài thì
-										kéo = đúng
-									kết thúc
-									if pull and pull to the thì
-										giá trị cục bộ = Chính xác và tonumber(string.format("%.1f", (((tonumber(maxValue) - tonumber(minValue)) / SizeChia) * Bar.AbsoluteSize.X) + tonumber(minValue))) hoặc math.floor((((tonumber(maxValue) - tonumber(minValue)) / SizeChia) * Bar.AbsoluteSize.X) + tonumber(minValue))
+									if holdStarted > 0 and (tick() - holdStarted >= holdTime) and not dragging then
+										dragging = true
+									end
+									if dragging and dragInput then
+										local value = Precise and  tonumber(string.format("%.1f", (((tonumber(maxValue) - tonumber(minValue)) / SizeChia) * Bar.AbsoluteSize.X) + tonumber(minValue))) or math.floor((((tonumber(maxValue) - tonumber(minValue)) / SizeChia) * Bar.AbsoluteSize.X) + tonumber(minValue))
 										pcall(function()
 											callBackAndSetText(value)
-										kết thúc)
+										end)
 										Bar.Size = UDim2.new(0, math.clamp(dragInput.Position.X - Bar.AbsolutePosition.X, 0, SizeChia), 0, 6)
-									kết thúc
-								kết thúc)
-							khác
-								kéo cục bộ = sai
-								đầu vào kéo cục bộ
-								local holdTime = 0
+									end
+								end)
+							else
+								local dragging = false
+								local dragInput
+								local holdTime = 0 
 								local holdStarted = 0
 
-								hàm local onInputBegan(input)
-									nếu input.UserInputType == Enum.UserInputType.MouseButton1 hoặc input.UserInputType == Enum.UserInputType.Touch thì
+								local function onInputBegan(input)
+									if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
 										holdStarted = tick()
 										
 										input.Changed:Connect(function()
 											if input.UserInputState == Enum.UserInputState.End then
-												kéo lê = sai
+												dragging = false
 												holdStarted = 0
-											kết thúc
-										kết thúc)
-									kết thúc
-								kết thúc
+											end
+										end)
+									end
+								end
 										
-								hàm local onInputEnded(input)
-									nếu input.UserInputType == Enum.UserInputType.MouseButton1 hoặc input.UserInputType == Enum.UserInputType.Touch thì
-										kéo lê = sai
-										holdStarted = 0
-									kết thúc
-								kết thúc
+								local function onInputEnded(input)
+									if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+										dragging = false
+										holdStarted = 0 
+									end
+								end
 
-								hàm local onInputChanged(input)
-									nếu input.UserInputType == Enum.UserInputType.MouseMovement hoặc input.UserInputType == Enum.UserInputType.Touch thì
+								local function onInputChanged(input)
+									if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
 										dragInput = input
-									kết thúc
-								kết thúc
+									end
+								end
 										
 								SliderButton.InputBegan:Connect(onInputBegan)
 								SliderButton.InputEnded:Connect(onInputEnded)
 								SliderButton.InputChanged:Connect(onInputChanged)
 										
 								RunService.RenderStepped:Connect(function()
-									if holdStarted > 0 và (tick() - holdStarted >= holdTime) và không kéo dài thì
-										kéo = đúng
-									kết thúc
-									if pull and pull to the thì
-										giá trị cục bộ = Chính xác và tonumber(string.format("%.1f", (((tonumber(maxValue) - tonumber(minValue)) / SizeChia) * Bar.AbsoluteSize.X) + tonumber(minValue))) hoặc math.floor((((tonumber(maxValue) - tonumber(minValue)) / SizeChia) * Bar.AbsoluteSize.X) + tonumber(minValue))
+									if holdStarted > 0 and (tick() - holdStarted >= holdTime) and not dragging then
+										dragging = true
+									end
+									if dragging and dragInput then
+										local value = Precise and  tonumber(string.format("%.1f", (((tonumber(maxValue) - tonumber(minValue)) / SizeChia) * Bar.AbsoluteSize.X) + tonumber(minValue))) or math.floor((((tonumber(maxValue) - tonumber(minValue)) / SizeChia) * Bar.AbsoluteSize.X) + tonumber(minValue))
 										pcall(function()
 											callBackAndSetText(value)
-										kết thúc)
+										end)
 										Bar.Size = UDim2.new(0, math.clamp(dragInput.Position.X - Bar.AbsolutePosition.X, 0, SizeChia), 0, 6)
-									kết thúc
-								kết thúc)
-							kết thúc
-							hàm local GetSliderValue(Value)
-								nếu tonumber(Value) <= minValue thì
+									end
+								end)
+							end
+							local function GetSliderValue(Value)
+								if tonumber(Value) <= minValue then
 									Bar.Size = UDim2.new(0, (0 * SizeChia), 0, 6)
 									callBackAndSetText(minValue)
-								ngược lại nếu tonumber(Value) >= maxValue thì
-									Bar.Size = UDim2.new(0, (maxValue / maxValue * SizeChia), 0, 6)
+								elseif tonumber(Value) >= maxValue then
+									Bar.Size = UDim2.new(0, (maxValue  /  maxValue * SizeChia), 0, 6)
 									callBackAndSetText(maxValue)
-								khác
+								else
 									Bar.Size = UDim2.new(1 - ((maxValue - Value) / (maxValue - minValue)), 0, 0, 6)
 									callBackAndSetText(Value)
-								kết thúc
-							kết thúc
+								end
+							end
 							Sliderbox_2.FocusLost:Connect(function()
 								GetSliderValue(Sliderbox_2.Text)
-							kết thúc)
-						kết thúc
-					khác
-						cho tôi, v theo cặp (ListNew) làm
-							if data type of v là "string" thì
+							end)
+						end
+					else
+						for i, v in pairs (ListNew) do
+							if typeof(v) == "string" then
 								local SampleItem = Instance.new("Frame")
 								local SampleItemCorner = Instance.new("UICorner")
 								local SampleItemBG = Instance.new("Frame")
@@ -2961,7 +2961,7 @@ kết thúc)
 								SampleItemTitle.Text = v
 								SampleItemTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
 								SampleItemTitle.TextSize = 14.000
-								SampleItemTitle.TextStrokeTransparency = 0,500
+								SampleItemTitle.TextStrokeTransparency = 0.500
 								SampleItemTitle.TextXAlignment = Enum.TextXAlignment.Left
 								SampleItemCheck.Name = "SampleItemCheck"
 								SampleItemCheck.Parent = SampleItemBG
@@ -2970,8 +2970,8 @@ kết thúc)
 								SampleItemCheck.Position = UDim2.new(1, 0, 0.5, 0)
 								SampleItemCheck.Size = UDim2.new(0, 25, 0, 25)
 								SampleItemCheck.ZIndex = 2
-								SampleItemCheck.Image = "rbxassetid3926305904"
-								SampleItemCheck.ImageColor3 = UIColor["Màu ô chọn trong menu thả xuống"]
+								SampleItemCheck.Image = "rbxassetid://3926305904"
+								SampleItemCheck.ImageColor3 = UIColor["Dropdown Selected Check Color"]
 								SampleItemCheck.ImageRectOffset = Vector2.new(312, 4)
 								SampleItemCheck.ImageRectSize = Vector2.new(24, 24)
 								SampleItemCheck.ImageTransparency = 1
@@ -2983,232 +2983,232 @@ kết thúc)
 								SampleItemButton.BorderSizePixel = 0
 								SampleItemButton.Size = UDim2.new(1, 0, 1, 0)
 								SampleItemButton.Font = Enum.Font.SourceSans
-								SampleItemButton.TextColor3 = getgenv().UIColor["Màu chữ"]
+								SampleItemButton.TextColor3 = getgenv().UIColor["Text Color"]
 								SampleItemButton.TextSize = 14.000
 								SampleItemButton.TextTransparency = 1.000
 								SampleItemButton.MouseEnter:Connect(function()
-									nếu Sel.Value == v thì
-										trở lại
-									kết thúc
+									if Sel.Value == v then
+										return
+									end
 									TweenService:Create(
 												SampleItemBG,
 												TweenInfo.new(getgenv().UIColor["Tween Animation 1 Speed"]), {
 										BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 									}
-											):Chơi()
+											):Play()
 									TweenService:Create(
 												SampleItemBG,
 												TweenInfo.new(getgenv().UIColor["Tween Animation 1 Speed"]), {
-										Độ trong suốt của nền = 0,7
+										BackgroundTransparency = .7
 									}
-											):Chơi()
-								kết thúc)
+											):Play()
+								end)
 								SampleItemButton.MouseLeave:Connect(function()
-									nếu Sel.Value == v thì
-										trở lại
-									kết thúc
+									if Sel.Value == v then
+										return
+									end
 									TweenService:Create(
 												SampleItemBG,
 												TweenInfo.new(getgenv().UIColor["Tween Animation 1 Speed"]), {
 										BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 									}
-											):Chơi()
+											):Play()
 									TweenService:Create(
 												SampleItemBG,
 												TweenInfo.new(getgenv().UIColor["Tween Animation 1 Speed"]), {
-										Độ trong suốt của nền = 1
+										BackgroundTransparency = 1
 									}
-											):Chơi()
-								kết thúc)
+											):Play()
+								end)
 								SampleItemButton.MouseButton1Click:Connect(function()
-									Nếu tìm thì
-										Dropdowntitle.PlaceholderText = "Tiêu đề .. ': ' .. v hoặc ""
-										Giá trị lựa chọn = v
-									khác
-										Dropdowntitle.Text = Tiêu đề .. ': ' .. v hoặc ""
-										Giá trị lựa chọn = v
-									kết thúc
+									if Search then
+										Dropdowntitle.PlaceholderText = Title .. ': ' .. v or ""
+										Sel.Value = v
+									else
+										Dropdowntitle.Text = Title .. ': ' .. v or ""
+										Sel.Value = v
+									end
 									TweenService:Create(
 												SampleItemBG,
 												TweenInfo.new(getgenv().UIColor["Tween Animation 1 Speed"]), {
-										BackgroundColor3 = UIColor["Màu ô chọn trong menu thả xuống"]
+										BackgroundColor3 = UIColor["Dropdown Selected Check Color"]
 									}
-											):Chơi()
+											):Play()
 									TweenService:Create(
 												SampleItemBG,
 												TweenInfo.new(getgenv().UIColor["Tween Animation 1 Speed"]), {
-										Độ trong suốt của nền = 0,5
+										BackgroundTransparency = .5
 									}
-											):Chơi()
-									nếu có hàm Callback thì
+											):Play()
+									if Callback then
 										Callback(v)
-									kết thúc
-									Nếu tìm thì
+									end
+									if Search then
 										Dropdowntitle.Text = ""
-									kết thúc
-									danh làm mới()
-								kết thúc)
-								nếu Sel.Value == v thì
-									SampleItemBG.BackgroundTransparency = 0.5;
-									SampleItemBG.BackgroundColor3 = UIColor["Màu ô chọn trong menu thả xuống"]
+									end
+									refreshlist()
+								end)
+								if Sel.Value == v then
+									SampleItemBG.BackgroundTransparency = .5;
+									SampleItemBG.BackgroundColor3 = UIColor["Dropdown Selected Check Color"]
 									SampleItem.LayoutOrder = 0
-								kết thúc
-							kết thúc
-						kết thúc
-					kết thúc
-				kết thúc
-				Nếu tìm thì
+								end
+							end
+						end
+					end
+				end
+				if Search then
 					Dropdowntitle.Changed:Connect(function()
-						biên soạn ()
-						Menu thả xuống tìm kiếm()
-					kết thúc)
-				kết thúc
-				if the default data typekhác với 'table' thì
-					Nếu tìm thì
-						Dropdowntitle.PlaceholderText = "Tiêu đề .. ': ' .. tostring(Mặc định hoặc "")
-					khác
-						Dropdowntitle.Text = "Tiêu đề .. ': ' .. tostring(Mặc định hoặc "")
-					kết thúc
-				nếu Slider thì
-					Tiêu đề thả xuống.Văn bản = ''
-					Dropdowntitle.PlaceholderText = Tiêu đề .. ': '
-				nếu được chọn thì
-					Nếu tìm thì
-						Dropdowntitle.PlaceholderText = Tiêu đề .. ': '
-					khác
-						Dropdowntitle.Text = Tiêu đề .. ': '
-					kết thúc
-				kết thúc
+						edit()
+						SearchDropdown()
+					end)
+				end
+				if typeof(Default) ~= 'table' then
+					if Search then
+						Dropdowntitle.PlaceholderText = Title .. ': ' .. tostring(Default or "")
+					else
+						Dropdowntitle.Text = Title .. ': ' .. tostring(Default or "")
+					end
+				elseif Slider then
+					Dropdowntitle.Text = ''
+					Dropdowntitle.PlaceholderText = Title .. ': '
+				elseif Selected then
+					if Search then
+						Dropdowntitle.PlaceholderText = Title .. ': '
+					else
+						Dropdowntitle.Text = Title .. ': '
+					end
+				end
 				DropdownButton.MouseButton1Click:Connect(function()
-					danh làm mới()
-					bận = không
+					refreshlist()
+					isbusy = not isbusy
 					local listsize = isbusy and UDim2.new(1, 0, 0, 170) or UDim2.new(1, 0, 0, 0)
 					local mainsize = isbusy and UDim2.new(1, 0, 0, 200) or UDim2.new(1, 0, 0, 25)
 					local DropCRotation = isbusy and 90 or 0
 					TweenService:Create(Dropdownlisttt, TweenInfo.new(getgenv().UIColor["Tween Animation 2 Speed"]), {
-						Size = list size
-					}):Chơi()
+						Size = listsize
+					}):Play()
 					TweenService:Create(DropdownFrame, TweenInfo.new(getgenv().UIColor["Tween Animation 2 Speed"]), {
-						Kích thước = kích thước chính
-					}):Chơi()
+						Size = mainsize
+					}):Play()
 					TweenService:Create(ImgDrop, TweenInfo.new(getgenv().UIColor["Tween Animation 2 Speed"]), {
-						Xoay = DropCRotation
-					}):Chơi()
-				kết thúc)
+						Rotation = DropCRotation
+					}):Play()
+				end)
 				local dropdownFunction = {
-					rf = danh sách làm mới
+					rf = refreshlist
 				}
-				hàm dropdownFunction:ClearText(v)
-					nếu không được chọn thì
-						Nếu tìm thì
-							Dropdowntitle.PlaceholderText = Tiêu đề .. ': ' .. (v hoặc "")
-						khác
-							Dropdowntitle.Text = Tiêu đề .. ': ' .. (v hoặc "")
-						kết thúc
-					khác
-						Dropdowntitle.Text = Tiêu đề .. ': ' .. (v hoặc "")
-					kết thúc
-				kết thúc
-				hàm dropdownFunction:GetNewList(List)
+				function dropdownFunction:ClearText(v)
+					if not Selected then
+						if Search then
+							Dropdowntitle.PlaceholderText = Title .. ': ' .. (v or "")
+						else
+							Dropdowntitle.Text = Title .. ': ' .. (v or "")
+						end
+					else
+						Dropdowntitle.Text = Title .. ': ' .. (v or "")
+					end
+				end
+				function dropdownFunction:GetNewList(List)
 					Sel.Value = ""
 							--refreshlist()
-					= sai
+					isbusy = false
 					local listsize = isbusy and UDim2.new(1, 0, 0, 170) or UDim2.new(1, 0, 0, 0)
 					local mainsize = isbusy and UDim2.new(1, 0, 0, 200) or UDim2.new(1, 0, 0, 25)
 					local DropCRotation = isbusy and 90 or 0
 					TweenService:Create(Dropdownlisttt, TweenInfo.new(getgenv().UIColor["Tween Animation 2 Speed"]), {
-						Size = list size
-					}):Chơi()
+						Size = listsize
+					}):Play()
 					TweenService:Create(DropdownFrame, TweenInfo.new(getgenv().UIColor["Tween Animation 2 Speed"]), {
-						Kích thước = kích thước chính
-					}):Chơi()
+						Size = mainsize
+					}):Play()
 					TweenService:Create(ImgDrop, TweenInfo.new(getgenv().UIColor["Tween Animation 2 Speed"]), {
-						Xoay = DropCRotation
-					}):Chơi()
+						Rotation = DropCRotation
+					}):Play()
 					ListNew = {}
 					ListNew = List
-					danh làm mới()
-					Nếu tìm thì
-						Dropdowntitle.PlaceholderText = Tiêu đề .. ': '
-					khác
-						Dropdowntitle.Text = Tiêu đề .. ': '
-					kết thúc
-				kết thúc
-                hàm thả xuốngFunction:SetValue(value)
-                    nếu không được chọn thì
-                        if table.find(ListNew, value) thì
-                            Lựa chọn giá trị = giá trị
-                            Nếu tìm thì
-                                Dropdowntitle.PlaceholderText = Tiêu đề .. ': ' .. giá trị
-                            khác
-                                Dropdowntitle.Text = Tiêu đề .. ': ' .. giá trị
-                            kết thúc
-                            nếu có hàm Callback thì
+					refreshlist()
+					if Search then
+						Dropdowntitle.PlaceholderText = Title .. ': '
+					else
+						Dropdowntitle.Text = Title .. ': '
+					end
+				end
+                function dropdownFunction:SetValue(value)
+                    if not Selected then
+                        if table.find(ListNew, value) then
+                            Sel.Value = value
+                            if Search then
+                                Dropdowntitle.PlaceholderText = Title .. ': ' .. value
+                            else
+                                Dropdowntitle.Text = Title .. ': ' .. value
+                            end
+                            if Callback then
                                 Callback(value)
-                            kết thúc
-                            danh làm mới()
-                        kết thúc
-                    khác
-                        if ListNew[value] ~= nil thì
+                            end
+                            refreshlist()
+                        end
+                    else
+                        if ListNew[value] ~= nil then
                             ListNew[value] = true
-                            Nếu tìm thì
-                                Dropdowntitle.PlaceholderText = Tiêu đề .. ': '
-                            khác
-                                Dropdowntitle.Text = Tiêu đề .. ': '
-                            kết thúc
-                            nếu có hàm Callback thì
+                            if Search then
+                                Dropdowntitle.PlaceholderText = Title .. ': '
+                            else
+                                Dropdowntitle.Text = Title .. ': '
+                            end
+                            if Callback then
                                 Callback(value, true)
-                            kết thúc
-                            danh làm mới()
-                        kết thúc
-                    kết thúc
-                kết thúc
+                            end
+                            refreshlist()
+                        end
+                    end
+                end
                 
-                hàm thả xuống: Lấy giá trị()
-                    nếu không được chọn thì
-                        return value được chọn
-                    khác
-                        kết quả cục bộ = {}
+                function dropdownFunction:GetValue()
+                    if not Selected then
+                        return Sel.Value
+                    else
+                        local result = {}
                         for key, val in pairs(ListNew) do
-                            nếu val == true thì
+                            if val == true then
                                 table.insert(result, key)
-                            kết thúc
-                        kết thúc
-                        trả về kết quả
-                    kết thúc
-                kết thúc
+                            end
+                        end
+                        return result
+                    end
+                end
 				local controlData = {
-                    Tên = Chức danh,
-                    Phần = Phần,
-                    Phần tử = Khung thả xuống,
+                    Name = Title,
+                    Section = Section,
+                    Element = DropdownFrame,
                     SectionName = Section_Name,
                     TabName = Page_Name,
                     TabButton = PageName,
-                    SetValue = dropdownFunction.SetValue,
-                    GetValue = dropdownFunction.GetValue
+                    SetValue = dropdownFunction.SetValue, 
+                    GetValue = dropdownFunction.GetValue 
                 }
                 table.insert(getgenv().AllControls, controlData)
                 
-                trả về hàm xuống
-			kết thúc
+                return dropdownFunction
+			end
 
-phần chức năngFunction:AddKeyBind(Setting, Callback)
+function sectionFunction:AddKeyBind(Setting, Callback)
     local TitleText = tostring(Setting.Title or Setting.Text) or ""
-    local Default = Setting.Default hoặc Setting.Key hoặc "F"
-    Local mode = Setting.Mode hoặc "Toggle"
-    local Callback = Setting.Callback hoặc Callback hoặc function() end
+    local Default = Setting.Default or Setting.Key or "F"
+    local Mode = Setting.Mode or "Toggle"
+    local Callback = Setting.Callback or Callback or function() end
     
-    hàm local GetKeyString(key)
+    local function GetKeyString(key)
         local keyStr = tostring(key)
         keyStr = keyStr:gsub("Enum.UserInputType.", "")
         keyStr = keyStr:gsub("Enum.KeyCode.", "")
-        trả về những chiếc đồng hồ
-    kết thúc
+        return keyStr
+    end
     
     local CurrentKey = GetKeyString(Default)
     local CurrentMode = Mode
-    Chọn hàng cục bộ = sai
-    localToggleState = false
+    local Picking = false
+    local ToggleState = false
     local HoldActive = false
     
     local BindFrame = Instance.new("Frame")
@@ -3241,10 +3241,10 @@ phần chức năngFunction:AddKeyBind(Setting, Callback)
     
     ButtonCorner.CornerRadius = UDim.new(0, 4)
     ButtonCorner.Name = "ButtonCorner"
-    ButtonCorner.Parent = BindB
+    ButtonCorner.Parent = BindBG
     
     BindButtonTitle.Name = "TextColor"
-    BindButtonTitle.Parent = BindB
+    BindButtonTitle.Parent = BindBG
     BindButtonTitle.BackgroundColor3 = Color3.fromRGB(230, 230, 230)
     BindButtonTitle.BackgroundTransparency = 1.000
     BindButtonTitle.Position = UDim2.new(0, 10, 0, 0)
@@ -3253,10 +3253,10 @@ phần chức năngFunction:AddKeyBind(Setting, Callback)
     BindButtonTitle.Text = TitleText
     BindButtonTitle.TextSize = 14.000
     BindButtonTitle.TextXAlignment = Enum.TextXAlignment.Left
-    BindButtonTitle.TextColor3 = getgenv().UIColor["Màu văn bản"]
+    BindButtonTitle.TextColor3 = getgenv().UIColor["Text Color"]
     
     BindCor.Name = "Background2"
-    BindCor.Parent = BindB
+    BindCor.Parent = BindBG
     BindCor.AnchorPoint = Vector2.new(1, 0.5)
     BindCor.Position = UDim2.new(1, -5, 0.5, 0)
     BindCor.Size = UDim2.new(0, 150, 0, 25)
@@ -3274,131 +3274,131 @@ phần chức năngFunction:AddKeyBind(Setting, Callback)
     Bindkey.Font = Enum.Font.GothamBold
     Bindkey.Text = CurrentKey
     Bindkey.TextSize = 14.000
-    Bindkey.TextColor3 = getgenv().UIColor["Màu văn bản"]
+    Bindkey.TextColor3 = getgenv().UIColor["Text Color"]
     
-    B indkey.MouseButton1Click:Connect(function()
-        if is choose thì phải trả về kết thúc
+    Bindkey.MouseButton1Click:Connect(function()
+        if Picking then return end
         
-        Đang chọn = đúng
+        Picking = true
         Bindkey.Text = "..."
         
         task.wait(0.2)
         
-        Kết nối khu phố
-        Kết nối = uis.InputBegan:Connect(function(input)
-            Nếu chọn thì
-                cục bộ
+        local Connection
+        Connection = uis.InputBegan:Connect(function(input)
+            if Picking then
+                local Key
                 
-                nếu input.UserInputType == Enum.UserInputType.Keyboard thì
+                if input.UserInputType == Enum.UserInputType.Keyboard then
                     Key = input.KeyCode.Name
-                nếu input.UserInputType == Enum.UserInputType.MouseButton1 thì
-                    = "Chuột trái"
+                elseif input.UserInputType == Enum.UserInputType.MouseButton1 then
+                    Key = "MouseLeft"
                 elseif input.UserInputType == Enum.UserInputType.MouseButton2 then
-                    = "Chuột phải"
-                kết thúc
+                    Key = "MouseRight"
+                end
                 
-                nếu Key thì
-                    Chọn = sai
-                    hiện tại =
+                if Key then
+                    Picking = false
+                    CurrentKey = Key
                     Bindkey.Text = Key
-                    Kết nối: Ngắt kết nối()
-                kết thúc
-            kết thúc
-        kết thúc)
-    kết thúc)
+                    Connection:Disconnect()
+                end
+            end
+        end)
+    end)
     
     uis.InputBegan:Connect(function(input, gpe)
-        if gpe or Picking thì trả về end
-        if uis:GetFocusedTextBox() thì trả về end
+        if gpe or Picking then return end
+        if uis:GetFocusedTextBox() then return end
         
         local pressedKey
-        nếu input.UserInputType == Enum.UserInputType.Keyboard thì
+        if input.UserInputType == Enum.UserInputType.Keyboard then
             pressedKey = input.KeyCode.Name
-        nếu input.UserInputType == Enum.UserInputType.MouseButton1 thì
+        elseif input.UserInputType == Enum.UserInputType.MouseButton1 then
             pressedKey = "MouseLeft"
         elseif input.UserInputType == Enum.UserInputType.MouseButton2 then
             pressedKey = "MouseRight"
-        kết thúc
+        end
         
-        if pressKey == CurrentKey thì
-            if CurrentMode == "Chuyển đổi" thì
-                ToggleState = không phải ToggleState
+        if pressedKey == CurrentKey then
+            if CurrentMode == "Toggle" then
+                ToggleState = not ToggleState
                 pcall(Callback, ToggleState)
             elseif CurrentMode == "Hold" then
-                hoạt động = đúng
+                HoldActive = true
                 pcall(Callback, true)
-            kết thúc
-        kết thúc
-    kết thúc)
+            end
+        end
+    end)
     
     uis.InputEnded:Connect(function(input)
-        if is choose thì phải trả về kết thúc
-        if uis:GetFocusedTextBox() thì trả về end
+        if Picking then return end
+        if uis:GetFocusedTextBox() then return end
         
         local releasedKey
-        nếu input.UserInputType == Enum.UserInputType.Keyboard thì
+        if input.UserInputType == Enum.UserInputType.Keyboard then
             releasedKey = input.KeyCode.Name
-        nếu input.UserInputType == Enum.UserInputType.MouseButton1 thì
+        elseif input.UserInputType == Enum.UserInputType.MouseButton1 then
             releasedKey = "MouseLeft"
         elseif input.UserInputType == Enum.UserInputType.MouseButton2 then
             releasedKey = "MouseRight"
-        kết thúc
+        end
         
-        if đã phát hànhKey == CurrentKey và CurrentMode == "Hold" và HoldActive thì
-            Giữ trạng thái hoạt động = false
+        if releasedKey == CurrentKey and CurrentMode == "Hold" and HoldActive then
+            HoldActive = false
             pcall(Callback, false)
-        kết thúc
-    kết thúc)
+        end
+    end)
     
     local controlData = {
-        Tên = Văn bản tiêu đề,
-        Phần = Phần,
-        Phần tử = BindFrame,
+        Name = TitleText,
+        Section = Section,
+        Element = BindFrame,
         SectionName = Section_Name,
         TabName = Page_Name,
-        TabButton = Tên trang
+        TabButton = PageName
     }
     table.insert(getgenv().AllControls, controlData)
     
     local keybindFunction = {}
     
-    hàm keybindFunction:Set(newKey)
+    function keybindFunction:Set(newKey)
         CurrentKey = GetKeyString(newKey)
         Bindkey.Text = CurrentKey
-    kết thúc
+    end
     
-    hàm keybindFunction:Get()
-        trả lời về hiện tại
-    kết thúc
+    function keybindFunction:Get()
+        return CurrentKey
+    end
     
-    hàm keybindFunction:SetMode(mode)
-        nếu chế độ == "Giữ" hoặc chế độ == "Chuyển đổi" thì
-            Hiện tại chế độ = mode
+    function keybindFunction:SetMode(mode)
+        if mode == "Hold" or mode == "Toggle" then
+            CurrentMode = mode
             ToggleState = false
-            Giữ trạng thái hoạt động = false
-        kết thúc
-    kết thúc
+            HoldActive = false
+        end
+    end
     
-    hàm keybindFunction:GetMode()
-        return at current mode
-    kết thúc
+    function keybindFunction:GetMode()
+        return CurrentMode
+    end
     
-    hàm keybindFunction:GetState()
-        if CurrentMode == "Chuyển đổi" thì
-            Trả về ToggleState
+    function keybindFunction:GetState()
+        if CurrentMode == "Toggle" then
+            return ToggleState
         elseif CurrentMode == "Hold" then
-            Trả về HoldActive
-        kết thúc
-        trả lời sai
-    kết thúc
+            return HoldActive
+        end
+        return false
+    end
     
-    return key link function
-kết thúc
-			phần chức năngFunction:AddInput(idk, Setting)
+    return keybindFunction
+end
+			function sectionFunction:AddInput(idk, Setting)
 				local TitleText = tostring(Setting.Text or Setting.Title) or ""
-				local Desc = Setting.Desc hoặc Setting.Description
+				local Desc = Setting.Desc or Setting.Description 
 				local Placeholder = tostring(Setting.Placeholder) or ""
-				local Default = Setting.Default hoặc false
+				local Default = Setting.Default or false
 				local Number_Only = Setting.Numeric or false
 				local Callback = Setting.Callback
 				
@@ -3409,7 +3409,7 @@ kết thúc
 				local Boxtitle = Instance.new("TextLabel")
 				local BoxCor = Instance.new("Frame")
 				local ButtonCorner_2 = Instance.new("UICorner")
-				local Boxx = Instance.new("TextBox")
+				local Boxxx = Instance.new("TextBox")
 				local Lineeeee = Instance.new("Frame")
 				local UICorner = Instance.new("UICorner")
 				
@@ -3418,12 +3418,12 @@ kết thúc
 				BoxFrame.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
 				BoxFrame.BackgroundTransparency = 1.000
 				
-				if Desc và Desc ~= "" thì
+				if Desc and Desc ~= "" then
 					BoxFrame.AutomaticSize = Enum.AutomaticSize.Y
 					BoxFrame.Size = UDim2.new(1, 0, 0, 0)
-				khác
+				else
 					BoxFrame.Size = UDim2.new(1, 0, 0, 40)
-				kết thúc
+				end
 				
 				BoxCorner.CornerRadius = UDim.new(0, 4)
 				BoxCorner.Name = "BoxCorner"
@@ -3434,33 +3434,33 @@ kết thúc
 				BoxBG.AnchorPoint = Vector2.new(0.5, 0.5)
 				BoxBG.Position = UDim2.new(0.5, 0, 0.5, 0)
 				BoxBG.Size = UDim2.new(1, -10, 1, 0)
-				BoxBG.BackgroundColor3 = getgenv().UIColor["Màu nền 1"]
+				BoxBG.BackgroundColor3 = getgenv().UIColor["Background 1 Color"]
 				BoxBG.BackgroundTransparency = getgenv().UIColor["Background 1 Transparency"]
 				
 				ButtonCorner.CornerRadius = UDim.new(0, 4)
 				ButtonCorner.Name = "ButtonCorner"
 				ButtonCorner.Parent = BoxBG
 				
-				Tên tiêu đề hộp = "Chữ màu"
+				Boxtitle.Name = "TextColor"
 				Boxtitle.Parent = BoxBG
 				Boxtitle.BackgroundColor3 = Color3.fromRGB(230, 230, 230)
 				Boxtitle.BackgroundTransparency = 1.000
 				
-				if Desc và Desc ~= "" thì
+				if Desc and Desc ~= "" then
 					Boxtitle.Position = UDim2.new(0, 10, 0, 5)
 					Boxtitle.Size = UDim2.new(1, -10, 0, 20)
-				khác
+				else
 					Boxtitle.Position = UDim2.new(0, 10, 0, 0)
-					Hộp kích thước tiêu đề = UDim2.new(0,5, 0, 1, 0)
-				kết thúc
+					Boxtitle.Size = UDim2.new(0.5, 0, 1, 0) 
+				end
 				
 				Boxtitle.Font = Enum.Font.GothamBlack
-				Văn bản tiêu đề = Văn bản tiêu đề
-				Hộp tiêu đề văn bản kích thước = 14.000
+				Boxtitle.Text = TitleText
+				Boxtitle.TextSize = 14.000
 				Boxtitle.TextXAlignment = Enum.TextXAlignment.Left
-				Boxtitle.TextColor3 = getgenv().UIColor["Màu văn bản"]
+				Boxtitle.TextColor3 = getgenv().UIColor["Text Color"]
 				
-				if Desc và Desc ~= "" thì
+				if Desc and Desc ~= "" then
 					local TextDesc = Instance.new("TextLabel")
 					TextDesc.Parent = BoxBG
 					TextDesc.BackgroundTransparency = 1
@@ -3477,7 +3477,7 @@ kết thúc
 					local pad = Instance.new("UIPadding", BoxBG)
 					pad.PaddingTop = UDim.new(0, 5)
 					pad.PaddingBottom = UDim.new(0, 5)
-				kết thúc
+				end
 				
 				BoxCor.Name = "Background2"
 				BoxCor.Parent = BoxBG
@@ -3494,18 +3494,18 @@ kết thúc
 				ButtonCorner_2.Parent = BoxCor
 				
 				Boxxx.Name = "TextColorPlaceholder"
-				Boxx.Parent = BoxCor
-				Boxx.BackgroundColor3 = Color3.fromRGB(230, 230, 230)
-				Boxx.BackgroundTransparency = 1.000
+				Boxxx.Parent = BoxCor
+				Boxxx.BackgroundColor3 = Color3.fromRGB(230, 230, 230)
+				Boxxx.BackgroundTransparency = 1.000
 				Boxxx.Position = UDim2.new(0, 5, 0, 0)
-				Boxx.Size = UDim2.new(1, -5, 1, 0)
+				Boxxx.Size = UDim2.new(1, -5, 1, 0)
 				Boxxx.Font = Enum.Font.GothamBold
-				Boxxx.PlaceholderText = Văn bản giữ chỗ
-				Boxx.Text = ""
-				Boxx.TextSize = 14.000
+				Boxxx.PlaceholderText = Placeholder
+				Boxxx.Text = ""
+				Boxxx.TextSize = 14.000
 				Boxxx.TextXAlignment = Enum.TextXAlignment.Left
-				Boxxx.PlaceholderColor3 = getgenv().UIColor["Màu chữ giữ chỗ"]
-				Boxxx.TextColor3 = getgenv().UIColor["Màu văn bản"]
+				Boxxx.PlaceholderColor3 = getgenv().UIColor["Placeholder Text Color"]
+				Boxxx.TextColor3 = getgenv().UIColor["Text Color"]
 				
 				Lineeeee.Name = "TextNSBoxLineeeee"
 				Lineeeee.Parent = BoxCor
@@ -3519,52 +3519,52 @@ kết thúc
 				
 				Boxxx.Focused:Connect(function()
 					TweenService:Create(Lineeeee, TweenInfo.new(getgenv().UIColor["Tween Animation 2 Speed"]), {
-						Độ trong suốt của nền = 0
-					}):Chơi()
-				kết thúc)
+						BackgroundTransparency = 0
+					}):Play()
+				end)
 				
-				nếu Number_Only thì
+				if Number_Only then
 					Boxxx:GetPropertyChangedSignal("Text"):Connect(function()
-						if tonumber(Boxx.Text) thì
-						khác
-							Boxxx.PlaceholderText = Văn bản giữ chỗ
-							Boxx.Text = ''
-						kết thúc
-					kết thúc)
-				kết thúc
+						if tonumber(Boxxx.Text) then
+						else
+							Boxxx.PlaceholderText = Placeholder
+							Boxxx.Text = ''
+						end
+					end)
+				end
 				
 				Boxxx.FocusLost:Connect(function()
 					TweenService:Create(Lineeeee, TweenInfo.new(getgenv().UIColor["Tween Animation 2 Speed"]), {
-						Độ trong suốt của nền = 1
-					}):Chơi()
-					nếu Boxx.Text khác '' thì
+						BackgroundTransparency = 1
+					}):Play()
+					if Boxxx.Text ~= '' then
 						Callback(Boxxx.Text)
-					kết thúc
-				kết thúc)
+					end
+				end)
 				
 				local textbox_function = {}
 				if Default then Boxxx.Text = Default end
-				hàm textbox_function.SetValue(Value)
-					Boxx.Text = Giá trị
+				function textbox_function.SetValue(Value)
+					Boxxx.Text = Value
 					Callback(Value)
-				kết thúc
+				end
 				
 				local controlData = {
-					Tên = Văn bản tiêu đề,
-					Phần = Phần,
-					Phần tử = Khung hộp,
+					Name = TitleText,
+					Section = Section,
+					Element = BoxFrame,
 					SectionName = Section_Name,
 					TabName = Page_Name,
-					TabButton = Tên trang
+					TabButton = PageName
 				}
 				table.insert(getgenv().AllControls, controlData)
-				return textbox
-			kết thúc
-			phần chức năngFunction:AddSlider(Setting)
+				return textbox_function
+			end
+			function sectionFunction:AddSlider(Setting)
 				local TitleText = tostring(Setting.Text or Setting.Title) or ""
 				local minValue = tonumber(Setting.Min) or 0
 				local maxValue = tonumber(Setting.Max) or 100
-				local Precise = Setting.Precise hoặc false
+				local Precise = Setting.Precise or false
 				local DefaultValue = tonumber(Setting.Default) or 0
 				local Callback = Setting.Callback
 				local SizeChia = 400;
@@ -3611,14 +3611,14 @@ kết thúc
 				SliderTitle.TextSize = 14.000
 				SliderTitle.RichText = true
 				SliderTitle.TextXAlignment = Enum.TextXAlignment.Left
-				SliderTitle.TextColor3 = getgenv().UIColor["Màu văn bản"]
+				SliderTitle.TextColor3 = getgenv().UIColor["Text Color"]
 				SliderBar.Name = "SliderBar"
 				SliderBar.Parent = SliderFrame
 				SliderBar.AnchorPoint = Vector2.new(.5, 0.5)
 				SliderBar.Position = UDim2.new(.5, 0, 0.5, 14)
 				SliderBar.Size = UDim2.new(0, 400, 0, 6)
 				SliderBar.BackgroundColor3 = getgenv().UIColor["Background 2 Color"]
-				SliderButton.Name = "SliderButton"
+				SliderButton.Name = "SliderButton "
 				SliderButton.Parent = SliderBar
 				SliderButton.BackgroundColor3 = Color3.fromRGB(230, 230, 230)
 				SliderButton.BackgroundTransparency = 1.000
@@ -3655,112 +3655,112 @@ kết thúc
 				Sliderbox_2.Font = Enum.Font.GothamBold
 				Sliderbox_2.Text = ""
 				Sliderbox_2.TextSize = 14.000
-				Sliderbox_2.TextColor3 = getgenv().UIColor["Màu văn bản"]
+				Sliderbox_2.TextColor3 = getgenv().UIColor["Text Color"]
 				SliderButton.MouseEnter:Connect(function()
 					TweenService:Create(Bar, TweenInfo.new(getgenv().UIColor["Tween Animation 2 Speed"]), {
 						BackgroundColor3 = getgenv().UIColor["Slider Highlight Color"]
-					}):Chơi()
-				kết thúc)
+					}):Play()
+				end)
 				SliderButton.MouseLeave:Connect(function()
 					TweenService:Create(Bar, TweenInfo.new(getgenv().UIColor["Tween Animation 2 Speed"]), {
 						BackgroundColor3 = getgenv().UIColor["Slider Line Color"]
-					}):Chơi()
-				kết thúc)
+					}):Play()
+				end)
 				local callBackAndSetText = function(val)
 					Sliderbox_2.Text = val
 					Callback(tonumber(val))
-				kết thúc
-				nếu DefaultValue thì
-					nếu DefaultValue <= minValue thì
-						Default value = Giá trị tối thiểu
-					Ngược lại, nếu DefaultValue >= maxValue thì
-						Default value = Maximum value
-					kết thúc
+				end
+				if DefaultValue then
+					if DefaultValue <= minValue then
+						DefaultValue = minValue
+					elseif DefaultValue >= maxValue then
+						DefaultValue = maxValue
+					end
 					Sliderbox_2.Text = tostring(DefaultValue)
 					Bar.Size = UDim2.new(1 - ((maxValue - DefaultValue) / (maxValue - minValue)), 0, 0, 6)
-                    nếu có hàm Callback thì
+                    if Callback then
                         Callback(tonumber(DefaultValue))
-                    kết thúc
-				kết thúc
-				kéo cục bộ = sai
-				đầu vào kéo cục bộ
-				local holdTime = 0
+                    end
+				end
+				local dragging = false
+				local dragInput
+				local holdTime = 0 
 				local holdStarted = 0
 
-				hàm local onInputBegan(input)
-					nếu input.UserInputType == Enum.UserInputType.MouseButton1 hoặc input.UserInputType == Enum.UserInputType.Touch thì
-						holdStarted = tick()
+				local function onInputBegan(input)
+					if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+						holdStarted = tick() 
 						
 						input.Changed:Connect(function()
 							if input.UserInputState == Enum.UserInputState.End then
-								kéo lê = sai
-								holdStarted = 0
-							kết thúc
-						kết thúc)
-					kết thúc
-				kết thúc
+								dragging = false
+								holdStarted = 0 
+							end
+						end)
+					end
+				end
 						
-				hàm local onInputEnded(input)
-					nếu input.UserInputType == Enum.UserInputType.MouseButton1 hoặc input.UserInputType == Enum.UserInputType.Touch thì
-						kéo lê = sai
-						holdStarted = 0
-					kết thúc
-				kết thúc
+				local function onInputEnded(input)
+					if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+						dragging = false
+						holdStarted = 0 
+					end
+				end
 
-				hàm local onInputChanged(input)
-					nếu input.UserInputType == Enum.UserInputType.MouseMovement hoặc input.UserInputType == Enum.UserInputType.Touch thì
+				local function onInputChanged(input)
+					if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
 						dragInput = input
-					kết thúc
-				kết thúc
+					end
+				end
 						
 				SliderButton.InputBegan:Connect(onInputBegan)
 				SliderButton.InputEnded:Connect(onInputEnded)
 				SliderButton.InputChanged:Connect(onInputChanged)
 						
 				RunService.RenderStepped:Connect(function()
-					if holdStarted > 0 và (tick() - holdStarted >= holdTime) và không kéo dài thì
-						kéo = đúng
-					kết thúc
-					if pull and pull to the thì
-						local value = Setting.Rouding and tonumber(string.format("%.".. Setting.Rouding or 1 .."f", (((tonumber(maxValue) - tonumber(minValue)) / SizeChia) * Bar.AbsoluteSize.X) + tonumber(minValue))) or math.floor((((tonumber(maxValue) - tonumber(minValue)) / SizeChia) * Bar.AbsoluteSize.X) + tonumber(minValue))
+					if holdStarted > 0 and (tick() - holdStarted >= holdTime) and not dragging then
+						dragging = true
+					end
+					if dragging and dragInput then
+						local value = Setting.Rouding and  tonumber(string.format("%.".. Setting.Rouding or 1 .."f", (((tonumber(maxValue) - tonumber(minValue)) / SizeChia) * Bar.AbsoluteSize.X) + tonumber(minValue))) or math.floor((((tonumber(maxValue) - tonumber(minValue)) / SizeChia) * Bar.AbsoluteSize.X) + tonumber(minValue))
 						pcall(function()
 							callBackAndSetText(value)
-						kết thúc)
+						end)
 						Bar.Size = UDim2.new(0, math.clamp(dragInput.Position.X - Bar.AbsolutePosition.X, 0, SizeChia), 0, 6)
-					kết thúc
-				kết thúc)
-				hàm local GetSliderValue(Value)
-					nếu tonumber(Value) <= minValue thì
+					end
+				end)
+				local function GetSliderValue(Value)
+					if tonumber(Value) <= minValue then
 						Bar.Size = UDim2.new(0, (0 * SizeChia), 0, 6)
 						callBackAndSetText(minValue)
-					ngược lại nếu tonumber(Value) >= maxValue thì
-						Bar.Size = UDim2.new(0, (maxValue / maxValue * SizeChia), 0, 6)
+					elseif tonumber(Value) >= maxValue then
+						Bar.Size = UDim2.new(0, (maxValue  /  maxValue * SizeChia), 0, 6)
 						callBackAndSetText(maxValue)
-					khác
+					else
 						Bar.Size = UDim2.new(1 - ((maxValue - Value) / (maxValue - minValue)), 0, 0, 6)
 						callBackAndSetText(Value)
-					kết thúc
-				kết thúc
+					end
+				end
 				Sliderbox_2.FocusLost:Connect(function()
 					GetSliderValue(Sliderbox_2.Text)
-				kết thúc)
+				end)
 				local slider_function = {}
-				hàm slider_function.SetValue(Value)
+				function slider_function.SetValue(Value)
 					GetSliderValue(Value)
-				kết thúc
+				end
 				local controlData = {
-                    Tên = Văn bản tiêu đề,
-                    Phần = Phần,
-                    Phần tử = SliderFrame,
+                    Name = TitleText,
+                    Section = Section,
+                    Element = SliderFrame,
                     SectionName = Section_Name,
                     TabName = Page_Name,
-                    TabButton = Tên trang
+                    TabButton = PageName
                 }
                 table.insert(getgenv().AllControls, controlData)
                 
-				trả về hàm
-			kết thúc
-			phần chức năngFunction:AddSeperator(text)
+				return slider_function
+			end
+			function sectionFunction:AddSeperator(text)
 				local SeparatorFrame = Instance.new("Frame")
 				SeparatorFrame.Name = "Separator"
 				SeparatorFrame.Parent = Section
@@ -3768,9 +3768,9 @@ kết thúc
 				SeparatorFrame.BackgroundTransparency = 1.000
 				SeparatorFrame.Size = UDim2.new(1, 0, 0, 25)
 
-				if text and text ~= "" thì
+				if text and text ~= "" then
 					local SeparatorLabel = Instance.new("TextLabel")
-					SeparatorLabel.Name = "Tiêu đề"
+					SeparatorLabel.Name = "Title"
 					SeparatorLabel.Parent = SeparatorFrame
 					SeparatorLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 					SeparatorLabel.BackgroundTransparency = 1.000
@@ -3779,7 +3779,7 @@ kết thúc
 					SeparatorLabel.AutomaticSize = Enum.AutomaticSize.X
 					SeparatorLabel.Size = UDim2.new(0, 0, 1, 0)
 					SeparatorLabel.Font = Enum.Font.GothamBold
-					SeparatorLabel.Text = văn bản
+					SeparatorLabel.Text = text
 					SeparatorLabel.TextColor3 = getgenv().UIColor["Section Text Color"]
 					SeparatorLabel.TextSize = 14.000
 					
@@ -3788,16 +3788,16 @@ kết thúc
 					LeftLine.Parent = SeparatorFrame
 					LeftLine.BackgroundColor3 = getgenv().UIColor["Section Underline Color"]
 					LeftLine.BorderSizePixel = 0
-					LeftLine.AnchorPoint = Vector2.new(1, 0.5)
-					Vị trí đường bên trái = UDim2.new(0.5, -5, 0.5, 0)
-					LeftLine.Size = UDim2.new(0.5, -10, 0, 1)
+					LeftLine.AnchorPoint = Vector2.new(1, 0.5) 
+					LeftLine.Position = UDim2.new(0.5, -5, 0.5, 0) 
+					LeftLine.Size = UDim2.new(0.5, -10, 0, 1) 
 					
 					local LeftGradient = Instance.new("UIGradient")
 					LeftGradient.Parent = LeftLine
 					LeftGradient.Rotation = 180
 					LeftGradient.Transparency = NumberSequence.new{
 						NumberSequenceKeypoint.new(0, 0),  
-						NumberSequenceKeypoint.new(1, 0.8)
+						NumberSequenceKeypoint.new(1, 0.8) 
 					}
 
 					local RightLine = Instance.new("Frame")
@@ -3814,12 +3814,12 @@ kết thúc
 					RightGradient.Rotation = 0
 					RightGradient.Transparency = NumberSequence.new{
 						NumberSequenceKeypoint.new(0, 0),
-						NumberSequenceKeypoint.new(1, 0.8)
+						NumberSequenceKeypoint.new(1, 0.8) 
 					}
 
-					hàm local UpdateSeparator()
+					local function UpdateSeparator()
 						local textWidth = SeparatorLabel.TextBounds.X
-						đệm khối bộ = 8
+						local padding = 8
 						
 						LeftLine.Size = UDim2.new(0.5, -(textWidth / 2) - padding, 0, 1)
 						LeftLine.Position = UDim2.new(0.5, -(textWidth / 2) - padding, 0.5, 0)
@@ -3827,18 +3827,18 @@ kết thúc
 						LeftLine.Position = UDim2.new(0.5, -(textWidth / 2) - padding, 0.5, 0)
 						
 						LeftLine.Size = UDim2.new(0.5, -(textWidth / 2) - padding, 0, 1)
-						Vị trí đường bên trái = UDim2.new(0, 0, 0.5, 0)
+						LeftLine.Position = UDim2.new(0, 0, 0.5, 0)
 						LeftLine.AnchorPoint = Vector2.new(0, 0.5)
 
 						RightLine.Size = UDim2.new(0.5, -(textWidth / 2) - padding, 0, 1)
-						RightLine.Position = UDim2.new(1, 0, 0.5, 0)
+						RightLine.Position = UDim2.new(1, 0, 0.5, 0) 
 						RightLine.AnchorPoint = Vector2.new(1, 0.5)
-					kết thúc
+					end
 
 					SeparatorLabel:GetPropertyChangedSignal("TextBounds"):Connect(UpdateSeparator)
 					UpdateSeparator()
 
-				khác
+				else
 					local SeparatorLine = Instance.new("Frame")
 					SeparatorLine.Name = "Line"
 					SeparatorLine.Parent = SeparatorFrame
@@ -3855,32 +3855,33 @@ kết thúc
 						NumberSequenceKeypoint.new(0.8, 0),
 						NumberSequenceKeypoint.new(1, 1)
 					}
-				kết thúc
+				end
 
 				local controlData = {
-					Tên = văn bản hoặc "Dấu phân cách",
-					Phần = Phần,
-					Phần tử = Phân tách khung,
+					Name = text or "Separator",
+					Section = Section,
+					Element = SeparatorFrame,
 					SectionName = Section_Name,
 					TabName = Page_Name,
-					TabButton = Tên trang
+					TabButton = PageName
 				}
 				table.insert(getgenv().AllControls, controlData)
-			kết thúc
+			end
 
-			trả lời về phần Hàm
-		kết thúc
+			return sectionFunction
+		end
         local pagefunc = {}
-        hàm pagefunc:AddLeftGroupbox(name)
-            trả về pageFunction:AddSection(name)
-        kết thúc
-        hàm pagefunc:AddRightGroupbox(name)
-            trả về pageFunction:AddSection(name)
-        kết thúc
-		trả về pagefunc
-        kết thúc
+        function pagefunc:AddLeftGroupbox(name)
+            return pageFunction:AddSection(name)
+        end
+        function pagefunc:AddRightGroupbox(name)
+            return pageFunction:AddSection(name)
+        end
+		return pagefunc
+        end
 
-	trả về hàm chính
-kết thúc
+	return Main_Function
+end
 
-trả về thư viện
+return Library
+
